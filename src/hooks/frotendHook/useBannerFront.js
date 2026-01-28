@@ -1,13 +1,16 @@
 import { useState } from "react"
 import axios from 'axios'
 import { useEffect } from "react"
+
 const useBannerFront = () => {
     const [bannerFront , setBannerFront] = useState([])
     const [loading , setLoading] = useState(true)
     const fetchAllBannerFront = async () =>{
+
+        console.log("Connecting to API at:", import.meta.env.VITE_API_URL);
         setLoading(true)
         try{
-            const res = await axios.get('http://localhost:5000/api/banner/public');
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}api/banner/public`);
             setLoading(false)
             setBannerFront(res.data.data)
         }catch(error){
