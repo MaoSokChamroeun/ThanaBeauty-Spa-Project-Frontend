@@ -10,7 +10,7 @@ const useBannerFront = () => {
         console.log("Connecting to API at:", import.meta.env.VITE_API_URL);
         setLoading(true)
         try{
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}api/banner/public`);
+            const res = await axios.get(`https://spa-frontend-blond.vercel.app/api/banner/public`);
             setLoading(false)
             setBannerFront(res.data.data)
         }catch(error){
