@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+/* index.css */
+@layer base {
+  body {
+    font-family: 'Josefin Sans', sans-serif !important;
+
+  }
+}
+
+/* Or simply: */
+body {
+  font-family: 'Josefin Sans', sans-serif !important;
+}

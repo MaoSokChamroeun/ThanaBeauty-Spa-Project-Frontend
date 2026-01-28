@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Kantumruy+Pro:wght@300;400;700&display=swap');
+
+@theme {
+  --font-josefin: "Josefin Sans", sans-serif;
+  --font-kantumruy: "Kantumruy Pro", sans-serif;
+}
+
+.font-kantumruy {
+  font-family: "Kantumruy Pro", sans-serif;
+  line-height: 1.6; 
+}
+
+.font-josefin {
+  font-family: "Josefin Sans", sans-serif;
+}
