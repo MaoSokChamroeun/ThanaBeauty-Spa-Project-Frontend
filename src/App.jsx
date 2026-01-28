@@ -29,12 +29,15 @@ import UpdateBanner from "./Admin/banners/UpdateBanner";
 import SpaPackages from "./components/spa-menu/SpaPackages";
 import {useLang} from './components/context/LanguageContext.jsx';
 import Booking from "./pages/Booking.jsx";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const {lang} = useLang();
   const fontClass = lang === 'kh' ? 'font-kantumruy' : 'font-josefin';
   return (
     <>
       <div className={fontClass}>
+        <ToastContainer position="top-right" autoClose={3000} />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />

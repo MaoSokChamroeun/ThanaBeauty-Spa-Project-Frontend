@@ -37,6 +37,9 @@ const ShowBooking = () => {
                       Price
                     </th>
                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                      Booking Date
+                    </th>
+                    <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                       Decription
                     </th>
                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
@@ -65,7 +68,7 @@ const ShowBooking = () => {
                         </td>
                         <td className="px-6 py-4 text-sm font-medium text-gray-900">
                           {item.client_name} <br />
-                          <span className="text-xs text-gray-400">
+                          <span className="text-xs font-bold text-red-600">
                             {item.phone}
                           </span>
                         </td>
@@ -82,6 +85,10 @@ const ShowBooking = () => {
 
                         <td className="px-6 py-4 text-sm font-bold text-red-600">
                           ${item.service?.price || "0"}
+                        </td>
+                        <td className="px-6 py-4 text-sm font-bold text-gray-600">
+                          {item.booking_date} <br />
+                          <span>{item.booking_time}</span>
                         </td>
                         <td className="px-6 py-4 text-sm text-gray-600">
                           {item.description || "0"}
