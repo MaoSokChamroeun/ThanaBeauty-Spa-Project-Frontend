@@ -5,8 +5,8 @@ const useCategory = () => {
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(false);
     const getAllCategory = async () => {
-        setLoading(true);
         try {
+            setLoading(true);
             const token = sessionStorage.getItem("token");
             const res = await axios.get('http://localhost:5000/api/category', {
                 headers: {

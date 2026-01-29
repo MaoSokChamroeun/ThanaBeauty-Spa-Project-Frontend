@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 const useUpdateBanner = () => {
   const [preview, setPreview] = useState(null);
   const [image, setImage] = useState(null);
@@ -63,6 +64,7 @@ const useUpdateBanner = () => {
       );
       if (res.data.success) {
         setLoading(false);
+        toast.success(res.data.message || "Banner updated successfully");
         navigate("/admin/dashboard/banner");
       }
     } catch (error) {

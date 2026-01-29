@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../layout/Layout";
-
+import banner from '../assets/banner1.jpg'
 import useBookingFront from "../hooks/frotendHook/bookingFront/useBookingFront"; // Import your hook
 import useServiceFront from "../hooks/frotendHook/useServiceFront";
 
@@ -11,10 +11,12 @@ const Booking = () => {
 
   return (
     <Layout>
-      <div className="w-full mt-35 px-4">
+      <div className="w-full mt-28">
+        <figure>
+          <img src={banner} alt="" className="object-cover w-full h-full" />
+        </figure>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold mb-5">Book a Service</h2>
-
+          <h2 className="text-7xl font-bold text-center mt-10 mb-10">Book a Service</h2>
           <form
             onSubmit={handleSumbitBooking}
             className="grid grid-cols-1 lg:grid-cols-3 gap-4"
@@ -52,7 +54,7 @@ const Booking = () => {
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full border p-2.5 border-gray-400 rounded-md outline-none focus:ring-1 focus:ring-gray-500"
+                className="w-full border p-3 border-gray-400 rounded-md outline-none focus:ring-1 focus:ring-gray-500"
                 required
               >
                 <option value="">-- Choose Service --</option>
@@ -118,7 +120,7 @@ const Booking = () => {
                 name="booking_time"
                 value={formData.booking_time}
                 onChange={handleChange}
-                className="border p-2.5 border-gray-400 w-full rounded-md outline-none focus:ring-1 focus:ring-gray-500"
+                className="border p-3 border-gray-400 w-full rounded-md outline-none focus:ring-1 focus:ring-gray-500"
                 required
               >
                 <option value="">-- Select Time --</option>
@@ -135,7 +137,7 @@ const Booking = () => {
 
             <button
               type="submit"
-              className="bg-gray-800 cursor-pointer text-white p-2"
+              className="bg-gray-800 h-15 mt-3.5 rounded-lg cursor-pointer text-white p-2"
             >
               Book Now
             </button>

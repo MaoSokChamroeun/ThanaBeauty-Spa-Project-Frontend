@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const useCreateService = () => {
   const navigate = useNavigate();
@@ -88,8 +89,8 @@ const useCreateService = () => {
     }
 
     try {
+      setLoading(true)
       const token = sessionStorage.getItem("token");
-
       const res = await axios.post("http://localhost:5000/api/services", data, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -98,12 +99,13 @@ const useCreateService = () => {
       });
 
       if (res.data.success) {
-        alert("Service created successfully!");
+        setLoading(false)
+        toast.success(res.data.message || "Service created successfully!");
         navigate("/admin/dashboard/services");
       }
     } catch (error) {
       console.error("Create error:", error.response?.data || error.message);
-      alert(error.response?.data?.message || "Failed to create service");
+      toast.error(error.message || "Failed to create service")
     } finally {
       setLoading(false);
     }

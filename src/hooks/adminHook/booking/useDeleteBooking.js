@@ -14,9 +14,7 @@ const useDeleteBooking = () => {
           Authorization : `Bearer ${token}`
         }
       });
-
       if (res.data.seccess || res.data.success) {
-        // alert("Deleted successfully");
         toast.success(res.data.message || "Deleted successfully!");
         if (callback) callback(); 
       }

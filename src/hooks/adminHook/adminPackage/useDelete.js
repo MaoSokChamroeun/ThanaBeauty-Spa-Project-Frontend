@@ -1,27 +1,21 @@
 import axios from "axios";
 import { useState } from "react";
-
+import { toast } from "react-toastify";
 const useDelete = () => {
   const [loading, setLoading] = useState(false);
-
-  // Pass the ID and a callback function (like getAllPackage) to refresh the UI
   const deletePackage = async (id, callback) => {
-    // 1. Ask for confirmation FIRST
     const confirmDelete = window.confirm("Are you sure you want to delete this item?");
     if (!confirmDelete) return;
-
     try {
       setLoading(true);
       const res = await axios.delete(`http://localhost:5000/api/package/${id}`);
-
-      // Check for your 'seccess' or 'success' key from backend
-      if (res.data.seccess || res.data.success) {
-        alert("Deleted successfully");
-        if (callback) callback(); // This re-runs getAllPackage in the component
+      if (res.data.success) {
+        toast.success(res.data.message || "Deleted successfully");
+        if (callback) callback(); 
       }
     } catch (error) {
       console.error("Delete error", error);
-      alert("Failed to delete package");
+      toast.error(error.message || "Failed to delete package");
     } finally {
       setLoading(false);
     }
