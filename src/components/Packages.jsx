@@ -10,7 +10,7 @@ const Packages = () => {
   const { lang } = useLang();
 
   return (
-    <div className="w-full mt-15 bg-gray-800">
+    <div className="w-full mt-15 bg-[#386324]">
       <div className="container mx-auto">
         <div className="mx-auto sm:w-[500px] text-center p-4">
           <p className="text-[35px] font-extrabold p-2 text-white">
@@ -32,7 +32,7 @@ const Packages = () => {
                 <img
                   src={`${httpUrl}/public/services/${item.image}`}
                   alt={item.title?.[lang] || item.title?.en}
-                  className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-[400px] rounded-lg lg:rounded-none xl:rounded-none object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </figure>
 

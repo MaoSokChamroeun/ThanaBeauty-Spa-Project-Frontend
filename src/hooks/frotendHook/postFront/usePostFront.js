@@ -1,0 +1,31 @@
+import { useState } from "react"
+import axios from "axios";
+import { useEffect } from "react";
+const usePostFront = () => {
+    const [postFront , setPostFront] = useState([]);
+    const [loading , setLoading] = useState(true)
+     const fetchPostsFront = async () => {
+    try {
+      setLoading(true);
+      const res = await axios.get("http://localhost:5000/api/post/public");
+
+      if (res.data.success) {
+        setLoading(false);
+        setPostFront(res.data.data);
+        
+      }
+    } catch (error) {
+      console.log("Fetching error", error);
+    }
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchPostsFront();
+  },[])
+    return(
+        {loading , postFront}
+    )
+}
+
+export default usePostFront

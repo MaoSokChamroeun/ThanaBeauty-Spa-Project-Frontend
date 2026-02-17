@@ -22,6 +22,14 @@ const procedure = [
     image: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=2070",
     label : 'Read More',
     path : '/body-scrub'
+  },
+  {
+    id: 4,
+    title: "Body Scrub",
+    description: "Deep exfoliation using organic coffee or sea salt to remove dead skin cells and improve blood circulation.",
+    image: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=2070",
+    label : 'Read More',
+    path : '/body-scrub'
   }
 ];
 

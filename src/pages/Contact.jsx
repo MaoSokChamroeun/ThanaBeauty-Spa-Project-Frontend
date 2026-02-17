@@ -1,6 +1,8 @@
 import React from "react";
 import Layout from "../layout/Layout";
 import { Link } from "react-router-dom";
+import contact from '../assets/contact.png'
+import Map from "../components/Map";
 const Contact = () => {
   return (
     <Layout>
@@ -27,10 +29,10 @@ const Contact = () => {
               data-aos-easing="ease-in-out"
             >
               <img
-                src={'https://img.freepik.com/free-photo/professional-cosmetologist-holding-tray-with-herbs-spa-procedure_1098-19904.jpg?semt=ais_hybrid&w=740&q=80'}
+                src={contact}
                 alt="Contact Poster"
                 className="
-                w-full h-full object-cover rounded-lg md:w-[800px] mx-auto lg:w-[600px] lg:h-[600px]"
+                w-full h-[400px] object-cover rounded-lg md:w-[800px] mx-auto lg:w-[600px] lg:h-[600px]"
               />
             </div>
 
@@ -99,8 +101,7 @@ const Contact = () => {
                 {/* Submit button */}
                 <div className="text-right flex justify-end">
                   <button className="relative inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[2px] focus:outline-none">
-                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#e7029a_0%,#f472b6_50%,#bd5fff_100%)]"></span>
-                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-slate-950 px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-[#1a5400] px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
                       <Link className="text-decoration-none text-white" to={'https://t.me/Mengchhayx99'}>Contact me</Link>
                       <svg
                         stroke="currentColor"
@@ -132,20 +133,7 @@ const Contact = () => {
         >
           Our Location
         </h1>
-        <div
-          className="w-full h-96 md:h-96 rounded-lg shadow-md overflow-hidden"
-          data-aos="fade-up"
-          data-aos-duration="700"
-          data-aos-delay="700"
-          data-aos-easing="ease-in-out"
-        >
-          <iframe
-            title="Location Map"
-            className="w-full h-full border-0"
-            src="https://maps.google.com/maps?q=11.522890,104.803582&z=16&output=embed"
-            allowFullScreen
-          ></iframe>
-        </div>
+       <Map />
       </div>
     </Layout>
   );

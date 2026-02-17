@@ -6,7 +6,7 @@ import useLogout from "../hooks/adminHook/logout/useLogout";
 const Sidebar = () => {
   const location = useLocation();
 
-  const {logout} = useLogout()
+  const { logout } = useLogout();
 
   const isActive = (path) => location.pathname === path;
 
@@ -116,6 +116,30 @@ const Sidebar = () => {
               </svg>
 
               <span>Service</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              rel="noopener noreferrer"
+              to={"/admin/dashboard/posts"}
+              className={`flex items-center p-2 space-x-3 rounded-md ${isActive("/admin/dashboard/posts") ? "bg-gray-300" : ""}`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M7.5 7.5h-.75A2.25 2.25 0 0 0 4.5 9.75v7.5a2.25 2.25 0 0 0 2.25 2.25h7.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a2.25 2.25 0 0 0-2.25-2.25h-.75m0-3-3-3m0 0-3 3m3-3v11.25m6-2.25h.75a2.25 2.25 0 0 1 2.25 2.25v7.5a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25v-.75"
+                />
+              </svg>
+
+              <span>Post</span>
             </Link>
           </li>
           <li>

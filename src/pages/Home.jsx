@@ -6,15 +6,16 @@ import Welcome from '../components/services/Welcome'
 import Packages from '../components/Packages'
 import Procedures from '../components/Procedures'
 import Layout from '../layout/Layout'
+import BlogPost from './BlogPost'
 export const Home = () => {
   return (
     <>
         <Layout>
-        <ImageSlider />
-        {/* <Welcome /> */}
-        <Welcome />
-        <Packages />
-        <Procedures />
+            <ImageSlider />
+            <Welcome />
+            <Packages />
+            <Procedures />
+            <BlogPost />                
         </Layout>
     </>
   )

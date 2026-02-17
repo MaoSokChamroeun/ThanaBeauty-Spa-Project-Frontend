@@ -7,7 +7,6 @@ const useUpdateService = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // ១. កែសម្រួល State ឱ្យទៅជា Object សម្រាប់ភាសា
   const [formData, setFormData] = useState({
     title: { kh: "", en: "", ch: "" },
     description: { kh: "", en: "", ch: "" },

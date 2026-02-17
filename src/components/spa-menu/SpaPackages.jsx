@@ -5,6 +5,8 @@ import contentMap from "../api/contentMap";
 import { useLang } from "../../components/context/LanguageContext"; // ១. Import useLang
 import { useTranslation } from "react-i18next"; // ២. Import useTranslation សម្រាប់ Static text
 import Loading from "../Loading";
+import { Link } from "react-router-dom";
+import Procedures from "../Procedures";
 
 const SpaPackages = ({ categorySlug }) => {
   const { lang } = useLang(); // ៣. ទាញយកភាសាដែលកំពុងប្រើ (kh, en, ឬ ch)
@@ -21,10 +23,10 @@ console.log(servicesCategory)
   return (
     <Layout>
       <div className="w-full">
-        <figure className="w-full">
+        <figure className="w-full mt-20">
           <img
             src={activePage.image}
-            className="object-cover w-full h-[500px] lg:h-[950px] xl:h-[950px]"
+            className="object-cover w-full h-[400px] lg:h-[950px] xl:h-[950px]"
             alt={activePage.title}
           />
         </figure>
@@ -39,13 +41,13 @@ console.log(servicesCategory)
             {t('experience_msg')} {activePage.title}. {t('rejuvenate_msg')}
           </p>
 
-          <div className="max-w-7xl mx-auto space-y-6">
+          <div className="max-w-7xl p-2 mx-auto space-y-6 sm:mt-6 md:p-2 sm:p-2">
             {loading && <Loading />}
             {!loading && servicesCategory?.data && servicesCategory.data.length > 0 ? (
               servicesCategory.data.map((item, index) => (
                 <div
                   key={item._id || item.id || index}
-                  className="w-[370px] mx-auto grid grid-cols-1 md:grid-cols-3 h-auto md:h-[350px] lg:w-full xl:w-full lg:mt-10 xl:mt-10 gap-6 border border-gray-400 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow "
+                  className="w-full mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 lg:h-[400px] h-auto md:h-auto sm:w-full lg:w-full xl:w-full lg:mt-10 xl:mt-10 gap-6 border border-gray-400 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow "
                 >
                   <div className="md:col-span-1">
                     <img
@@ -57,18 +59,18 @@ console.log(servicesCategory)
 
                   <div className="md:col-span-1 p-6 flex flex-col justify-between">
                     <div>
-                      <h2 className="text-2xl font-semibold text-gray-800">
+                      <h2 className="text-2xl font-semibold text-[#386324] sm:text-center sm:text-[50px] lg:text-[30px] xl:text-[40px]">
      
                         {item.title?.[lang] || item.title?.en}
                       </h2>
 
-                      <p className="mt-3 text-gray-600 text-sm leading-relaxed line-clamp-4">
+                      <p className="mt-3 text-gray-600 text-sm leading-relaxed line-clamp-4 sm:text-center sm:text-[20px]">
                    
                         {item.description?.[lang] || item.description?.en}
                       </p>
 
-                      <div className="mt-4">
-                        <p className="text-sm font-medium text-gray-700">
+                      <div className="mt-4 sm:text-center">
+                        <p className="text-sm font-medium text-gray-700 sm:text-[20px] lg:text-md xl:text-md">
                           {t('method')}:
                         </p>
                         <ul className="list-disc list-inside text-sm text-gray-600 mt-1 space-y-1">
@@ -87,15 +89,17 @@ console.log(servicesCategory)
                   </div>
 
                   <div className="md:col-span-1 p-6 flex flex-col justify-center items-center bg-gray-50 border-l border-gray-100">
-                    <p className="text-2xl font-bold text-gray-800">
+                    <p className="text-2xl font-bold text-[#386324]">
                       USD {item.price}
                     </p>
                     <p className="text-sm text-gray-500 mb-6">
                       {item.duration} {t('minutes')}
                     </p>
 
-                    <button className="px-8 py-3 cursor-pointer bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium">
-                      {t('book_now')}
+                    <button className="px-8 py-3 cursor-pointer bg-[#1a5400] text-white rounded-lg hover:bg-gray-700 transition-colors font-medium">
+                     <Link to={'/booking'}>
+                           {t('book_now')}
+                     </Link>
                     </button>
                   </div>
                 </div>
@@ -111,6 +115,7 @@ console.log(servicesCategory)
             )}
           </div>
         </div>
+        <Procedures />
       </div>
     </Layout>
   );

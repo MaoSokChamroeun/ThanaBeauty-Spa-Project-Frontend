@@ -3,7 +3,7 @@ import useBannerFront from "../../hooks/frotendHook/useBannerFront";
 
 function ImageSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const {bannerFront : banners} = useBannerFront();
+  const { bannerFront: banners } = useBannerFront();
   useEffect(() => {
     if (banners.length === 0) return;
 
@@ -24,8 +24,8 @@ function ImageSlider() {
   if (banners.length === 0)
     return <div className="w-full h-[400px] bg-gray-200 animate-pulse" />;
   return (
-    <div className="relative w-full h-[400px] overflow-hidden group lg:h-[950px]">
-      <div className="relative h-full">
+    <div className="relative w-full h-[400px] mt-15 overflow-hidden group lg:h-[900px]">
+      <div className="relative h-full w-full ">
         {banners.map((img, index) => (
           <div
             key={img._id || index}

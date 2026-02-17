@@ -17,7 +17,7 @@ const useCategory = () => {
                 setCategories(res.data.data || res.data.result || []);
             }
         } catch (error) {
-            console.error("Error 401: បញ្ហាការផ្ទៀងផ្ទាត់សិទ្ធិ!", error);
+            console.error("Error 401: Unathurization!", error);
         } finally {
             setLoading(false);
         }

@@ -4,16 +4,20 @@ import { FaFacebook } from "react-icons/fa6";
 import { FaTelegram } from "react-icons/fa6";
 import { FaTiktok } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
+import logo from '../assets/logo_1.jpg'
 const Footer = () => {
   return (
-    <footer className="w-full mt-10 p-10 bg-gray-800 text-white">
-      <div className="max-w-7xl mx-auto px-4">
+    <footer className="w-full mt-10 p-10 bg-[#386324] text-white">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             
-           <div className='w-[200px] text-center'>
-             <h1 className="text-2xl font-bold">Muthida</h1>
-            <span className='font-semibold'>Spa</span>
+           <div className='w-[200px] text-center flex flex-col justify-center items-center'>
+             <figure>
+              <img src={logo} alt="" className='w-20' />
+             </figure>
+             <p className='pt-2 text-[18px]'>Thana Beauty</p>
+             <span>Spa</span>
            </div>
             <p className="mt-2">
               ទីតាំង នៅក្រោយផ្សាររំចែក អូឌឹម03 ផ្លូវជាតិលេខ4
@@ -23,7 +27,7 @@ const Footer = () => {
             <div className="flex items-center  gap-3 mt-4">
               <span>📧</span>
               <a href="mailto:ninetynineinfo99@gmail.com" className=" uppercase text-decoration-none">
-                NINETYNINEME99@GMAIL.COM
+               THANABEAUTYSPA@GMAIL.COM
               </a>
             </div>
 
@@ -50,7 +54,7 @@ const Footer = () => {
 
             <div className="mt-3 space-y-2">
               <p className="font-semibold">088 238 89 85  / 098 330 880</p>
-              <p className="font-semibold">mothidatspa@gmail.com</p>
+              <p className="font-semibold">thanabeautyspa@gmail.com</p>
             </div>
           </div>
 

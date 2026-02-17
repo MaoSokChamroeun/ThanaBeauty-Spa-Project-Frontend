@@ -46,13 +46,7 @@ const useGetServiceCategory = (slug) => {
     const fetchServices = async () => {
       setLoading(true)
       try {
-        const token = sessionStorage.getItem("token");
-        const response = await axios.get(`http://localhost:5000/api/services/category/${slug}`,{
-          headers : {
-            Authorization : `Bearer ${token}`
-          }
-        });
-        
+        const response = await axios.get(`http://localhost:5000/api/services/category/${slug}`);
         if(response.data.success){
           setLoading(false)
             setServicesCategory(response.data); 

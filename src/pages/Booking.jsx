@@ -1,8 +1,9 @@
 import React from "react";
 import Layout from "../layout/Layout";
-import banner from '../assets/banner1.jpg'
+import banner from '../assets/booking.png'
 import useBookingFront from "../hooks/frotendHook/bookingFront/useBookingFront"; // Import your hook
 import useServiceFront from "../hooks/frotendHook/useServiceFront";
+import Map from "../components/Map";
 
 const Booking = () => {
   const { servicesFront } = useServiceFront();
@@ -11,9 +12,9 @@ const Booking = () => {
 
   return (
     <Layout>
-      <div className="w-full mt-28">
-        <figure>
-          <img src={banner} alt="" className="object-cover w-full h-full" />
+      <div className="w-full mt-28 p-2 lg:p-0">
+        <figure className="h-[400px] lg:h-[900px] xl:h-[900px]">
+          <img src={banner} alt="" className="object-cover w-full h-full rounded-lg lg:rounded-0 xl:rounded-none" />
         </figure>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-7xl font-bold text-center mt-10 mb-10">Book a Service</h2>
@@ -137,12 +138,14 @@ const Booking = () => {
 
             <button
               type="submit"
-              className="bg-gray-800 h-15 mt-3.5 rounded-lg cursor-pointer text-white p-2"
+              className="bg-[#1a5400] h-14 mt-3.5 rounded-lg cursor-pointer text-white p-2"
             >
               Book Now
             </button>
           </form>
         </div>
+
+        <Map />
       </div>
     </Layout>
   );

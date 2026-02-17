@@ -3,14 +3,12 @@ import Layout from "../layout/Layout";
 import gallerys from "../data/gallery";
 
 const Gallery = () => {
-  // State to store the image currently being viewed
   const [selectedImg, setSelectedImg] = useState(null);
 
   return (
     <Layout>
       <div className="w-full font-josefin">
-        {/* Banner */}
-        <div className="w-full">
+        <div className="w-full mt-10">
           <figure>
             <img
               src="https://www.nagaworld.com/wp-content/uploads/2015/05/web-The-Spa_Four-hands-massage-766x375.jpg"
@@ -25,8 +23,6 @@ const Gallery = () => {
             Gallery
           </p>
           <p className="text-center">Gallery Customer In Our shop spa</p>
-
-          {/* Grid Container */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:mt-10 xl:mt-10 mt-5">
             {gallerys.map((item) => (
               <div
@@ -39,7 +35,7 @@ const Gallery = () => {
                   alt={`Gallery ${item.id}`}
                   className="object-cover w-full h-[330px] transition-transform duration-700 group-hover:scale-120"
                 />
-                {/* Hover Overlay */}
+                
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="text-white text-sm tracking-widest border border-white px-4 py-2">
                     VIEW

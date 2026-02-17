@@ -31,14 +31,22 @@ import {useLang} from './components/context/LanguageContext.jsx';
 import Booking from "./pages/Booking.jsx";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ShowPost from "./Admin/adPost/ShowPost.jsx";
+import CreatePost from "./Admin/adPost/CreatePost.jsx";
+import UpdatePost from "./Admin/adPost/UpdatePost.jsx";
+import BlogPost from "./pages/BlogPost.jsx";
+import PostSlug from "./components/blogPostSlug/PostSlug.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 function App() {
   const {lang} = useLang();
   const fontClass = lang === 'kh' ? 'font-kantumruy' : 'font-josefin';
   return (
     <>
       <div className={fontClass}>
+       
         <ToastContainer position="top-right" autoClose={3000} />
         <BrowserRouter>
+        <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
@@ -88,6 +96,10 @@ function App() {
               element={<SpaPackages categorySlug="cupping-message" />}
             />
 
+            {/* slug post */}
+            <Route path="/post/:slug"
+              element={<PostSlug postSlug = "moon-light-spa-massage-promotion" />}
+            /> 
             <Route path="/admin/login" element={<Login />} />
             <Route path="/admin/dashboard"
               element={
@@ -106,6 +118,9 @@ function App() {
             <Route path="/admin/dashboard/package/create"
               element={<CreatePackage />}
             />
+             <Route path="/admin/dashboard/posts" element={<ShowPost />} />
+             <Route path="/admin/dashboard/post/create" element={<CreatePost />} />
+             
             <Route path="/admin/dashboard/services" element={<ShowService />} />
             <Route path="/admin/dashboard/services/create"
               element={<CreateService />}
@@ -119,6 +134,10 @@ function App() {
             <Route
               path="/admin/dashboard/category/edit/:id"
               element={<UpdateCategory />}
+            />
+            <Route
+              path="/admin/dashboard/posts/edit/:id"
+              element={<UpdatePost />}
             />
 
             <Route path="/admin/dashboard/banner" element={<ShowBanner />} />

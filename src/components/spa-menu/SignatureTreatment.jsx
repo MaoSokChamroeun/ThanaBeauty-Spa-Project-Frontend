@@ -77,7 +77,9 @@ const SignatureTreatment = () => {
                     </p>
 
                     <button className="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
+                      <Link to = {'/booking'}>
                       Book Now
+                      </Link>
                     </button>
                   </div>
                 </div>

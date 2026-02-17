@@ -1,46 +1,116 @@
-import React from 'react';
-import procedure from '../data/prodecure';
-import { Link } from 'react-router-dom';
-// import useFrontPackage from '../hooks/frotendHook/useFrontPackage';
-const Procedures = () => {
-  // const {frontPackage} = useFrontPackage();
-  return (
-    <section className="bg-gray-800 text-white py-24 px-6 font-josefin">
-        <div className=' mx-auto text-center mb-10'>
-            <p className='font-extrabold text-[35px]'>Popular Procedures</p>
-            <p className='text-center'>These procedures are the best and most loved by our customers.</p>
-        </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-10">
-        {procedure.map((service) => (
-          <div key={service.id} className="group relative flex flex-col items-center">
-            {/* 1. Circular Image Container */}
-            <div className="relative z-20 w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 overflow-hidden rounded-full border-8 border-white shadow-xl transition-transform duration-500 group-hover:scale-105">
-              <img 
-                src={service.image} 
-                alt={service.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </div>
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import useFrontPackage from "../hooks/frotendHook/useFrontPackage";
+import { useLang } from "./context/LanguageContext";
+import httpUrl from "./api/httpUrl";
 
-            {/* 2. Content Card */}
-            <div className="bg-gray-100 -mt-32 pt-44 pb-12 px-8 rounded-sm text-center flex flex-col items-center w-full max-w-sm transition-shadow duration-300 group-hover:shadow-md">
-              <h3 className="text-gray-800 text-2xl font-bold mb-4 uppercase ">
-                {service.title}
-              </h3>
-              <p className="text-gray-700 text-sm leading-relaxed mb-8 h-24 md:h-20">
-                {service.description}
-              </p>
-              
-              {/* Read More Button */}
-              <button className="cursor-pointer border border-gray-800 text-gray-900 px-10 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-gray-800 hover:text-white transition-all duration-300 active:scale-95">
-                <Link to = {service.path}>{service.label}</Link>
-              </button>
-            </div>
-          </div>
-        ))}
+const Procedures = () => {
+  const { frontPackage: services = [] } = useFrontPackage();
+  const { lang } = useLang();
+  const sliderRef = useRef(null);
+  const [index, setIndex] = useState(0);
+
+  const visibleCards = 3;
+  const data = services.slice(0, 12);
+  const totalSlides = Math.max(data.length - visibleCards, 0);
+
+  const scrollToIndex = (i) => {
+    const container = sliderRef.current;
+    const cardWidth = container.offsetWidth / visibleCards;
+
+    container.scrollTo({
+      left: cardWidth * i,
+      behavior: "smooth",
+    });
+
+    setIndex(i);
+  };
+
+  const next = () => {
+    if (index < totalSlides) {
+      scrollToIndex(index + 1);
+    }
+  };
+
+  const prev = () => {
+    if (index > 0) {
+      scrollToIndex(index - 1);
+    }
+  };
+
+  return (
+    <section className="py-20 px-6 bg-gray-100">
+      <h2 className="text-2xl lg:text-3xl xl:text-3xl font-bold text-gray-900 mb-10 text-center">
+        OTHER TREATMENTS/PACKAGES
+      </h2>
+
+
+
+      <div className="relative max-w-7xl mx-auto">
+  {/* Arrows */}
+  <button
+    onClick={prev}
+    className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md w-10 h-10 rounded-full"
+  >
+    ‹
+  </button>
+
+  <button
+    onClick={next}
+    className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md w-10 h-10 rounded-full"
+  >
+    ›
+  </button>
+
+  {/* Slider */}
+  <div
+    ref={sliderRef}
+    className="flex gap-3 overflow-hidden scroll-smooth lg:px-8.5 xl:px-8.5 px-1"
+  >
+    {data.map((item) => (
+      <div
+        key={item._id}
+        className="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] bg-white shadow-md"
+      >
+        <img
+          src={`${httpUrl}/public/services/${item.image}`}
+          alt={item.title?.[lang]}
+          className="w-full h-64 lg:h-80 object-cover"
+        />
+
+        <div className="p-6 text-center">
+          <h3 className="text-[#386324] font-bold text-xl mb-4">
+            {item.title?.[lang]}
+          </h3>
+
+          <Link
+            to={item.category?.path || "#"}
+            className="border border-[#386324] text-[#386324] px-6 py-2 rounded-full hover:bg-[#386324] hover:text-white transition"
+          >
+            Read More
+          </Link>
+        </div>
       </div>
+    ))}
+  </div>
+
+  {/* Dots */}
+  <div className="flex justify-center mt-6 gap-2">
+    {Array.from({ length: totalSlides + 1 }).map((_, i) => (
+      <button
+        key={i}
+        onClick={() => scrollToIndex(i)}
+        className={`w-2.5 h-2.5 rounded-full ${
+          index === i ? "bg-black" : "bg-gray-400"
+        }`}
+      />
+    ))}
+  </div>
+</div>
+
     </section>
   );
 };
+
 
 export default Procedures;

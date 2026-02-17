@@ -1,33 +1,30 @@
-// import React, { useState } from "react";
-// import useCategory from "../../hooks/adminHook/adminCategory/useCategory";
-// import Sidebar from "../Sidebar";
-// import HeroBar from "../HeroBar";
-// import { Link } from "react-router-dom";
-// import Loading from "../Loading";
-// import useDeleteCategory from "../../hooks/adminHook/adminCategory/useDeleteCategory";
+// import React from 'react'
+// import Sidebar from '../Sidebar';
+// import HeroBar from '../HeroBar';
+// import usePosts from '../../hooks/adminHook/adminPost/usePosts';
+// import { Link } from 'react-router-dom';
+// import Loading from '../Loading';
+// import usePostDelete from '../../hooks/adminHook/adminPost/usePostDelete';
 
-// const Category = () => {
-//     const {categories ,loading , getAllPackage} = useCategory();
-//      const {deleteCategory , loading : isDeleting} = useDeleteCategory();
-//      console.log('Fetch category' , categories)
-//      cosnt [currectPage , setCurrentPage] = useState(1);
-//      const itemsPerPage = 4;
-
+// const ShowPost = () => {
+//     const {posts , loading , fetchPosts} = usePosts();
+//     const {deletePost , loading : isDeleting} = usePostDelete();
 //   return (
-//     <div className="flex bg-gray-50 min-h-screen">
+//      <div className="flex bg-gray-50 min-h-screen">
 //       <Sidebar />
 //       <HeroBar>
 //         <div className="p-6">
 //           {/* Header Section */}
 //           <div className="flex justify-between items-center mb-6">
 //             <h1 className="text-3xl font-extrabold text-gray-800 tracking-tight">
-//               Category Management
+//               Post Management
 //             </h1>
 //             <Link
-//               to={"/admin/dashboard/category/create"}
+
+//               to={"/admin/dashboard/post/create"}
 //               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2"
 //             >
-//               <span className="text-xl">+</span> Create Package
+//               <span className="text-xl">+</span> Create Service
 //             </Link>
 //           </div>
 
@@ -41,13 +38,23 @@
 //                       ID
 //                     </th>
 //                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-//                       Category Name
+//                       Image
 //                     </th>
-
 //                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-//                       Category Path 
+//                       Title (KH / EN / CH)
 //                     </th>
-
+//                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+//                       Content (KH / EN / CH)
+//                     </th>
+//                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+//                       Slug
+//                     </th>
+//                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+//                       Tags
+//                     </th>
+//                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+//                       Author
+//                     </th>
 //                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-center">
 //                       Actions
 //                     </th>
@@ -56,15 +63,12 @@
 //                 <tbody className="divide-y divide-gray-100">
 //                   {loading ? (
 //                     <tr>
-//                       <td
-//                         colSpan="5"
-//                         className="px-6 py-10 text-center text-gray-500"
-//                       >
+//                       <td colSpan="7" className="px-6 py-10 text-center">
 //                         <Loading />
 //                       </td>
 //                     </tr>
-//                   ) : categories && categories.length > 0 ? (
-//                     categories.map((item, index) => (
+//                   ) : posts && posts.length > 0 ? (
+//                     posts.map((item, index) => (
 //                       <tr
 //                         className="hover:bg-gray-50 transition-colors"
 //                         key={item._id}
@@ -72,47 +76,77 @@
 //                         <td className="px-6 py-4 text-sm text-gray-500">
 //                           #{index + 1}
 //                         </td>
-//                         <td className="px-6 py-4 text-sm font-medium text-gray-900">
-//                           {item.name}
+//                         <td className="px-6 py-4">
+//                           <img
+                            
+//                             src={`http://localhost:5000/public/posts/${item.image}`}
+//                             alt={item.title?.en || "service"}
+//                             className="w-12 h-12 object-cover rounded-md border border-gray-200"
+//                             onError={(e) => {
+//                               e.target.src =
+//                                 "https://via.placeholder.com/150?text=No+Image";
+//                             }}
+//                           />
 //                         </td>
-//                         <td className="px-6 py-4 text-sm font-medium text-gray-900">
-//                           {item.path}
+//                         <td className="px-6 py-4 text-sm">
+//                           <div className="font-bold text-gray-900">
+//                             {item.title?.kh}
+//                           </div>
+//                           <div className="text-gray-500 italic text-xs">
+//                             {item.title?.en}
+//                           </div>
+//                           <div className="text-gray-500 italic text-xs">
+//                             {item.title?.ch}
+//                           </div>
 //                         </td>
+//                         <td className="px-6 py-4 text-sm">
+//                           <div className="font-bold text-gray-900">
+//                             {item.content?.kh}
+//                           </div>
+//                           <div className="text-gray-500 italic text-xs">
+//                             {item.content?.en}
+//                           </div>
+//                           <div className="text-gray-500 italic text-xs">
+//                             {item.content?.ch}
+//                           </div>
+//                         </td>
+//                         <td className="px-6 py-4 text-sm font-md text-gray-500">
+//                           {item.slug}
+//                         </td>
+//                         <td className="px-6 py-4 text-gray-500 text-sm font-md">
+//                           {item.tags}
+//                         </td>
+//                         <td className="px-6 py-4 text-sm font-bold text-green-600">
+//                           {item.author?.username}
+//                         </td>
+                        
 //                         <td className="px-6 py-4 text-center">
 //                           <div className="flex justify-center gap-3">
-//                             <button
+//                             <Link
+//                               to={`/admin/dashboard/posts/edit/${item._id}`}
 //                               className="p-2 text-blue-600 hover:bg-blue-50 rounded-full transition-colors"
-//                               title="Edit"
 //                             >
-//                               <Link
-//                                 to={`/admin/dashboard/category/edit/${item._id}`}
+//                               <svg
+//                                 xmlns="http://www.w3.org/2000/svg"
+//                                 fill="none"
+//                                 viewBox="0 0 24 24"
+//                                 strokeWidth={1.5}
+//                                 stroke="currentColor"
+//                                 className="w-5 h-5"
 //                               >
-//                                 <svg
-//                                   xmlns="http://www.w3.org/2000/svg"
-//                                   fill="none"
-//                                   viewBox="0 0 24 24"
-//                                   strokeWidth={1.5}
-//                                   stroke="currentColor"
-//                                   className="w-5 h-5"
-//                                 >
-//                                   <path
-//                                     strokeLinecap="round"
-//                                     strokeLinejoin="round"
-//                                     d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
-//                                   />
-//                                 </svg>
-//                               </Link>
-//                             </button>
+//                                 <path
+//                                   strokeLinecap="round"
+//                                   strokeLinejoin="round"
+//                                   d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+//                                 />
+//                               </svg>
+//                             </Link>
 //                             <button
-//                               // 3. Pass the ID and the refresh callback
 //                               onClick={() =>
-//                                 deleteCategory(item._id, getAllPackage)
+//                                 deletePost(item._id, fetchPosts)
 //                               }
 //                               disabled={isDeleting}
-//                               className={`p-2 cursor-pointer text-red-600 hover:bg-red-50 rounded-full transition-colors ${
-//                                 isDeleting ? "opacity-50" : ""
-//                               }`}
-//                               title="Delete"
+//                               className={`p-2 cursor-pointer text-red-600 hover:bg-red-50 rounded-full transition-colors ${isDeleting ? "opacity-50" : ""}`}
 //                             >
 //                               <svg
 //                                 xmlns="http://www.w3.org/2000/svg"
@@ -136,10 +170,10 @@
 //                   ) : (
 //                     <tr>
 //                       <td
-//                         colSpan="5"
+//                         colSpan="7"
 //                         className="px-6 py-10 text-center text-gray-400"
 //                       >
-//                         No categories found.
+//                         No services found.
 //                       </td>
 //                     </tr>
 //                   )}
@@ -150,21 +184,23 @@
 //         </div>
 //       </HeroBar>
 //     </div>
-//   );
-// };
+//   )
+// }
 
-// export default Category;
-import React, { useState } from "react";
-import useCategory from "../../hooks/adminHook/adminCategory/useCategory";
-import Sidebar from "../Sidebar";
-import HeroBar from "../HeroBar";
-import { Link } from "react-router-dom";
-import Loading from "../Loading";
-import useDeleteCategory from "../../hooks/adminHook/adminCategory/useDeleteCategory";
+// export default ShowPost
 
-const Category = () => {
-  const { categories, loading, getAllPackage } = useCategory();
-  const { deleteCategory, loading: isDeleting } = useDeleteCategory();
+
+import React, { useState } from 'react';
+import Sidebar from '../Sidebar';
+import HeroBar from '../HeroBar';
+import usePosts from '../../hooks/adminHook/adminPost/usePosts';
+import { Link } from 'react-router-dom';
+import Loading from '../Loading';
+import usePostDelete from '../../hooks/adminHook/adminPost/usePostDelete';
+
+const ShowPost = () => {
+  const { posts, loading, fetchPosts } = usePosts();
+  const { deletePost, loading: isDeleting } = usePostDelete();
 
   // --- Pagination Logic ---
   const [currentPage, setCurrentPage] = useState(1);
@@ -172,8 +208,8 @@ const Category = () => {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentCategories = categories?.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.ceil((categories?.length || 0) / itemsPerPage);
+  const currentPosts = posts?.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil((posts?.length || 0) / itemsPerPage);
 
   const paginate = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
@@ -189,13 +225,13 @@ const Category = () => {
           {/* Header Section */}
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-3xl font-extrabold text-gray-800 tracking-tight">
-              Category Management
+              Post Management
             </h1>
             <Link
-              to={"/admin/dashboard/category/create"}
+              to={"/admin/dashboard/post/create"}
               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2"
             >
-              <span className="text-xl">+</span> Create Category
+              <span className="text-xl">+</span> Create Post
             </Link>
           </div>
 
@@ -206,30 +242,55 @@ const Category = () => {
                 <thead>
                   <tr className="bg-gray-50 border-b border-gray-200">
                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">ID</th>
-                    <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Category Name</th>
-                    <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Category Path</th>
+                    <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Image</th>
+                    <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Title (KH / EN / CH)</th>
+                    <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Content</th>
+                    <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Slug</th>
+                    <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Tags</th>
+                    <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Author</th>
                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider text-center">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {loading ? (
                     <tr>
-                      <td colSpan="4" className="px-6 py-10 text-center">
+                      <td colSpan="8" className="px-6 py-10 text-center">
                         <Loading />
                       </td>
                     </tr>
-                  ) : currentCategories && currentCategories.length > 0 ? (
-                    currentCategories.map((item, index) => (
+                  ) : currentPosts && currentPosts.length > 0 ? (
+                    currentPosts.map((item, index) => (
                       <tr className="hover:bg-gray-50 transition-colors" key={item._id}>
                         <td className="px-6 py-4 text-sm text-gray-500">
                           #{indexOfFirstItem + index + 1}
                         </td>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">{item.name}</td>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">{item.path}</td>
+                        <td className="px-6 py-4">
+                          <img
+                            src={`http://localhost:5000/public/posts/${item.image}`}
+                            alt={item.title?.en || "post"}
+                            className="w-12 h-12 object-cover rounded-md border border-gray-200"
+                            onError={(e) => {
+                              e.target.src = "https://via.placeholder.com/150?text=No+Image";
+                            }}
+                          />
+                        </td>
+                        <td className="px-6 py-4 text-sm">
+                          <div className="font-bold text-gray-900">{item.title?.kh}</div>
+                          <div className="text-gray-500 italic text-xs">{item.title?.en}</div>
+                          <div className="text-gray-500 italic text-xs">{item.title?.ch}</div>
+                        </td>
+                        <td className="px-6 py-4 text-sm">
+                          <div className="text-gray-900 line-clamp-2 max-w-xs">{item.content?.kh}</div>
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-500">{item.slug}</td>
+                        <td className="px-6 py-4 text-gray-500 text-sm">{item.tags}</td>
+                        <td className="px-6 py-4 text-sm font-bold text-green-600">
+                          {item.author?.username || "Admin"}
+                        </td>
                         <td className="px-6 py-4 text-center">
                           <div className="flex justify-center gap-3">
                             <Link
-                              to={`/admin/dashboard/category/edit/${item._id}`}
+                              to={`/admin/dashboard/posts/edit/${item._id}`}
                               className="p-2 text-blue-600 hover:bg-blue-50 rounded-full transition-colors"
                             >
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -237,7 +298,7 @@ const Category = () => {
                               </svg>
                             </Link>
                             <button
-                              onClick={() => deleteCategory(item._id, getAllPackage)}
+                              onClick={() => deletePost(item._id, fetchPosts)}
                               disabled={isDeleting}
                               className={`p-2 cursor-pointer text-red-600 hover:bg-red-50 rounded-full transition-colors ${isDeleting ? "opacity-50" : ""}`}
                             >
@@ -251,8 +312,8 @@ const Category = () => {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan="4" className="px-6 py-10 text-center text-gray-400">
-                        No categories found.
+                      <td colSpan="8" className="px-6 py-10 text-center text-gray-400">
+                        No posts found.
                       </td>
                     </tr>
                   )}
@@ -261,12 +322,12 @@ const Category = () => {
             </div>
 
             {/* Pagination UI */}
-            {!loading && categories?.length > itemsPerPage && (
+            {!loading && posts?.length > itemsPerPage && (
               <div className="bg-gray-50 px-6 py-4 border-t border-gray-200 flex items-center justify-between">
                 <div className="text-sm text-gray-700">
                   Showing <span className="font-medium">{indexOfFirstItem + 1}</span> to{" "}
-                  <span className="font-medium">{Math.min(indexOfLastItem, categories?.length)}</span> of{" "}
-                  <span className="font-medium">{categories?.length}</span> categories
+                  <span className="font-medium">{Math.min(indexOfLastItem, posts?.length)}</span> of{" "}
+                  <span className="font-medium">{posts?.length}</span> posts
                 </div>
                 <div className="flex gap-2">
                   <button
@@ -278,17 +339,19 @@ const Category = () => {
                   >
                     Previous
                   </button>
-                  {[...Array(totalPages)].map((_, i) => (
-                    <button
-                      key={i + 1}
-                      onClick={() => paginate(i + 1)}
-                      className={`px-3 py-1 rounded-lg border transition-colors ${
-                        currentPage === i + 1 ? "bg-blue-600 text-white border-blue-600" : "bg-white hover:bg-gray-50 text-gray-700"
-                      }`}
-                    >
-                      {i + 1}
-                    </button>
-                  ))}
+                  <div className="flex gap-1">
+                    {[...Array(totalPages)].map((_, i) => (
+                      <button
+                        key={i + 1}
+                        onClick={() => paginate(i + 1)}
+                        className={`px-3 py-1 rounded-lg border transition-colors ${
+                          currentPage === i + 1 ? "bg-blue-600 text-white border-blue-600" : "bg-white hover:bg-gray-50 text-gray-700"
+                        }`}
+                      >
+                        {i + 1}
+                      </button>
+                    ))}
+                  </div>
                   <button
                     onClick={() => paginate(currentPage + 1)}
                     disabled={currentPage === totalPages}
@@ -308,4 +371,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default ShowPost;
