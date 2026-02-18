@@ -50,14 +50,14 @@ const Procedures = () => {
   {/* Arrows */}
   <button
     onClick={prev}
-    className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md w-10 h-10 rounded-full"
+    className="absolute left-2 top-40 -translate-y-1/2 z-10 bg-white shadow-md w-10 h-10 rounded-full"
   >
     ‹
   </button>
 
   <button
     onClick={next}
-    className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md w-10 h-10 rounded-full"
+    className="absolute right-2 top-40 -translate-y-1/2 z-10 bg-white shadow-md w-10 h-10 rounded-full"
   >
     ›
   </button>

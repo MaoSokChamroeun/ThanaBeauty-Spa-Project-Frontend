@@ -37,6 +37,9 @@ import UpdatePost from "./Admin/adPost/UpdatePost.jsx";
 import BlogPost from "./pages/BlogPost.jsx";
 import PostSlug from "./components/blogPostSlug/PostSlug.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import ShowGallery from "./Admin/gallery/ShowGallery.jsx";
+import CreateGallery from "./Admin/gallery/createGallery.jsx";
+import UpdateGallery from "./Admin/gallery/UpdateGallery.jsx";
 function App() {
   const {lang} = useLang();
   const fontClass = lang === 'kh' ? 'font-kantumruy' : 'font-josefin';
@@ -127,6 +130,8 @@ function App() {
             />
             <Route path="/admin/dashboard/booking" element={<ShowBooking />} />
             <Route path="/admin/dashboard/category" element={<Category />} />
+            <Route path="/admin/dashboard/gallery" element = {<ShowGallery />} />
+            <Route path="/admin/dashboard/gallery/create" element = {<CreateGallery />} />
             <Route
               path="/admin/dashboard/category/create"
               element={<CreateCateory />}
@@ -134,6 +139,10 @@ function App() {
             <Route
               path="/admin/dashboard/category/edit/:id"
               element={<UpdateCategory />}
+            />
+             <Route
+              path="/admin/dashboard/gallery/edit/:id"
+              element={<UpdateGallery />}
             />
             <Route
               path="/admin/dashboard/posts/edit/:id"

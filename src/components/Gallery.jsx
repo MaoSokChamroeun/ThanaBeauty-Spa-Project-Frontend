@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import Layout from "../layout/Layout";
-import gallerys from "../data/gallery";
+import useGalleryFront from "../hooks/frotendHook/getGallery/useGalleryFront";
+import httpUrl from "./api/httpUrl";
+import Loading from "./Loading";
+import gallery from '../assets/gallery.png'
 
 const Gallery = () => {
   const [selectedImg, setSelectedImg] = useState(null);
-
+  const { galleryFront, loading } = useGalleryFront();
   return (
     <Layout>
       <div className="w-full font-josefin">
         <div className="w-full mt-10">
           <figure>
             <img
-              src="https://www.nagaworld.com/wp-content/uploads/2015/05/web-The-Spa_Four-hands-massage-766x375.jpg"
+              src={gallery}
               alt="Spa Banner"
               className="w-full h-[400px] md:h-[950px] object-cover"
             />
@@ -24,18 +27,18 @@ const Gallery = () => {
           </p>
           <p className="text-center">Gallery Customer In Our shop spa</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:mt-10 xl:mt-10 mt-5">
-            {gallerys.map((item) => (
+            {loading && <Loading />}
+            {!loading && galleryFront.map((item) => (
               <div
                 key={item.id}
                 className="relative overflow-hidden cursor-pointer group rounded-sm shadow-md"
-                onClick={() => setSelectedImg(item.image)} // Set image on click
-              >
+                onClick={() => setSelectedImg(`${httpUrl}/public/gallery/${item.image}`)}               >
                 <img
-                  src={item.image}
+                  src={`${httpUrl}/public/gallery/${item.image}`}
                   alt={`Gallery ${item.id}`}
                   className="object-cover w-full h-[330px] transition-transform duration-700 group-hover:scale-120"
                 />
-                
+
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="text-white text-sm tracking-widest border border-white px-4 py-2">
                     VIEW
@@ -46,13 +49,11 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* --- LIGHTBOX MODAL --- */}
         {selectedImg && (
           <div
             className="fixed inset-0 z-[1000] bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm animate-fadeIn"
             onClick={() => setSelectedImg(null)} // Close when clicking background
           >
-            {/* Close Button */}
             <button
               className="absolute top-10 right-10 text-white hover:text-[#aa9fc7] transition-colors"
               onClick={() => setSelectedImg(null)}
@@ -72,12 +73,11 @@ const Gallery = () => {
               </svg>
             </button>
 
-            {/* Large Image */}
             <img
               src={selectedImg}
               alt="Full Size"
               className="max-w-full max-h-[90vh] object-contain shadow-2xl transition-all"
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image itself
+              onClick={(e) => e.stopPropagation()} 
             />
           </div>
         )}

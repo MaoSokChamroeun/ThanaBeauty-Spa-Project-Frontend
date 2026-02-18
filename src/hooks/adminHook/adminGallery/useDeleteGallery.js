@@ -2,18 +2,18 @@ import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-const useDeleteBanner = () => {
+const useDeleteGallery = () => {
   const [loading, setLoading] = useState(false);
 
-  const deleteBanner = async (id , callback) => {
+  const deleteGallery = async (id , callback) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this item?");
     if (!confirmDelete) return;
     try {
       setLoading(true);
       const token = sessionStorage.getItem('token')
-      const res = await axios.delete(`http://localhost:5000/api/banner/${id}`,{
+      const res = await axios.delete(`http://localhost:5000/api/gallery/${id}`,{
         headers : {
-          Authorization : `Bearer ${token}`
+            Authorization : `Bearer ${token}`
         }
       });
       if (res.data.success) {
@@ -28,7 +28,7 @@ const useDeleteBanner = () => {
     }
   };
 
-  return { deleteBanner, loading };
+  return { deleteGallery, loading };
 };
 
-export default useDeleteBanner;
+export default useDeleteGallery;
