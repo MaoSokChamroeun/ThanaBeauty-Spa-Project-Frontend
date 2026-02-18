@@ -12,7 +12,7 @@ const useGetPostSlug = () => {
             
             try {
                 setLoading(true);
-                const res = await axios.get(`http://localhost:5000/api/post/slug/${slug}`);  
+                const res = await axios.get(`http://localhost:5000/api/posts/slug/${slug}`);  
                 if (res.data.success) {
                     setPostSlug(res.data.data); 
                 }

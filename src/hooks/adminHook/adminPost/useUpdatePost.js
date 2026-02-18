@@ -70,7 +70,7 @@ const useUpdatePost = () => {
       try {
         setLoading(true);
         const token = sessionStorage.getItem("token");
-        const res = await axios.get(`http://localhost:5000/api/post/${id}`, {
+        const res = await axios.get(`http://localhost:5000/api/posts/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -124,7 +124,7 @@ const useUpdatePost = () => {
       setLoading(true);
       const token = sessionStorage.getItem("token");
       const res = await axios.put(
-        `http://localhost:5000/api/post/${id}`,
+        `http://localhost:5000/api/posts/${id}`,
         data,
         {
           headers: {

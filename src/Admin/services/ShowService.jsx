@@ -11,7 +11,7 @@ const ShowService = () => {
   const { deleteService, loading: isDeleting } = useDeleteService();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; // Adjust this number as needed
+  const itemsPerPage = 8; // Adjust this number as needed
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;

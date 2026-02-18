@@ -8,7 +8,7 @@ const usePosts = () => {
     try {
       setLoading(true);
       const token = sessionStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/post", {
+      const res = await axios.get("http://localhost:5000/api/posts", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
