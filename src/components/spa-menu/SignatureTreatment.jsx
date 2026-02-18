@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../../layout/Layout";
-// import useService from "../../hooks/adminHook/adminService/useService";
 import useGetServiceCategory from "../../hooks/adminHook/getServiceById/useGetServiceCategory";
 import { useParams } from "react-router-dom";
 const SignatureTreatment = () => {

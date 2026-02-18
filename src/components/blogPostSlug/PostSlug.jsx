@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom'
 const PostSlug = () => {
     const {lang} = useLang()
     const { postSlug } = useGetPostSlug();
-    console.log('Post data: ', postSlug);
-
     return (
         <Layout>
           <div className='mt-40'>

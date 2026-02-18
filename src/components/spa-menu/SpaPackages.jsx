@@ -2,19 +2,16 @@ import React from "react";
 import Layout from "../../layout/Layout";
 import useGetServiceCategory from "../../hooks/adminHook/getServiceById/useGetServiceCategory";
 import contentMap from "../api/contentMap";
-import { useLang } from "../../components/context/LanguageContext"; // ១. Import useLang
-import { useTranslation } from "react-i18next"; // ២. Import useTranslation សម្រាប់ Static text
+import { useLang } from "../../components/context/LanguageContext"; 
+import { useTranslation } from "react-i18next";
 import Loading from "../Loading";
 import { Link } from "react-router-dom";
 import Procedures from "../Procedures";
 
 const SpaPackages = ({ categorySlug }) => {
-  const { lang } = useLang(); // ៣. ទាញយកភាសាដែលកំពុងប្រើ (kh, en, ឬ ch)
+  const { lang } = useLang(); 
   const { t } = useTranslation();
-
-  
   const { servicesCategory = [] , loading } = useGetServiceCategory(categorySlug);
-console.log(servicesCategory)
   const activePage = contentMap[categorySlug] || {
     title: "Spa Services",
     image: "https://www.angkorspa.net/wp-content/uploads/2025/11/Oil-Massage-1890x760.png",
