@@ -40,6 +40,10 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 import ShowGallery from "./Admin/gallery/ShowGallery.jsx";
 import CreateGallery from "./Admin/gallery/createGallery.jsx";
 import UpdateGallery from "./Admin/gallery/UpdateGallery.jsx";
+import Video from "./pages/Video.jsx";
+import ShowVideo from "./Admin/adVideo/ShowVideo.jsx";
+import CreateVideo from "./Admin/adVideo/CreateVideo.jsx";
+import UpdateVideo from "./Admin/adVideo/UpdateVideo.jsx";
 function App() {
   const {lang} = useLang();
   const fontClass = lang === 'kh' ? 'font-kantumruy' : 'font-josefin';
@@ -55,6 +59,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/location" element={<Location />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/video" element = {<Video />} />
 
             <Route path="/booking" element = {<Booking />} />
             <Route path="/services/message-lotion-skin-jasmine" 
@@ -132,6 +137,11 @@ function App() {
             <Route path="/admin/dashboard/category" element={<Category />} />
             <Route path="/admin/dashboard/gallery" element = {<ShowGallery />} />
             <Route path="/admin/dashboard/gallery/create" element = {<CreateGallery />} />
+             <Route path="/admin/dashboard/video" element={<ShowVideo />} />
+             <Route
+              path="/admin/dashboard/video/create"
+              element={<CreateVideo />}
+            />
             <Route
               path="/admin/dashboard/category/create"
               element={<CreateCateory />}
@@ -143,6 +153,10 @@ function App() {
              <Route
               path="/admin/dashboard/gallery/edit/:id"
               element={<UpdateGallery />}
+            />
+             <Route
+              path="/admin/dashboard/video/edit/:id"
+              element={<UpdateVideo />}
             />
             <Route
               path="/admin/dashboard/posts/edit/:id"

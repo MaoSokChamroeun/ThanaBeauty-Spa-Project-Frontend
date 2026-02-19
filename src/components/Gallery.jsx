@@ -16,7 +16,7 @@ const Gallery = () => {
             <img
               src={gallery}
               alt="Spa Banner"
-              className="w-full h-[400px] md:h-[950px] object-cover"
+              className="w-full h-[400px] md:h-[950px] ​lg:h-[950px] object-cover"
             />
           </figure>
         </div>
@@ -25,12 +25,12 @@ const Gallery = () => {
           <p className="text-[35px] font-extrabold text-center mt-5 lg:mt-10 xl:mt-10 uppercase tracking-widest text-gray-800">
             Gallery
           </p>
-          <p className="text-center">Gallery Customer In Our shop spa</p>
+          <p className="text-center text-1xl">Gallery Customer In Our shop spa</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:mt-10 xl:mt-10 mt-5">
             {loading && <Loading />}
             {!loading && galleryFront.map((item) => (
               <div
-                key={item.id}
+                key={item._id}
                 className="relative overflow-hidden cursor-pointer group rounded-sm shadow-md"
                 onClick={() => setSelectedImg(`${httpUrl}/public/gallery/${item.image}`)}               >
                 <img
