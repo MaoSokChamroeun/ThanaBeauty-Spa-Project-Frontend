@@ -17,12 +17,9 @@ const Sidebar = () => {
     >
       <div className="flex items-center p-2 space-x-4" bis_skin_checked="1">
         <div bis_skin_checked="1">
-          <div className="flex items-center cursor-pointer">
+          <div className="flex items-center cursor-pointer justify-center">
             <div className="text-[#aa9fc7] text-xl font-bold flex flex-col leading-tight tracking-widest">
-              <span>MUDITA</span>
-              <span className="text-[10px] text-center tracking-[0.4em] font-bold text-black">
-                SPA
-              </span>
+              <img src="../../public/logo_new.jpg" alt="" className="w-20 rounded-full" />
             </div>
           </div>
         </div>

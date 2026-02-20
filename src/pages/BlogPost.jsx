@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import usePostFront from "../hooks/frotendHook/postFront/usePostFront";
 import { useLang } from "../components/context/LanguageContext";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import i18n from "../components/api/translate3Lang";
 
 const BlogPost = () => {
   const { postFront } = usePostFront();
   const { lang } = useLang();
+  const {t} = useTranslation();
+  useEffect(() => {
+    const savedLng = localStorage.getItem("lng");
+    if (savedLng && i18n.language !== savedLng) {
+      i18n.changeLanguage(savedLng);
+    }
+  }, []);
   return (
     <>
       <div className="mt-10 p-2">
-        <p className="text-[40px] font-bold text-center text-[#386324]">Our Shop Spa</p>
+        <p className="text-[35px] font-bold text-center text-gray-900 uppercase">{t('our_shop')}</p>
         <div className="max-w-7xl mx-auto pt-5">
           {postFront.slice(0, 4).map((post, index) => (
             <div

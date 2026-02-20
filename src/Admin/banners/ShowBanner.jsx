@@ -20,7 +20,7 @@ const ShowBanner = () => {
             </h1>
             <Link
               to={"/admin/dashboard/banner/create"}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2"
+              className="bg-[#386324] hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2"
             >
               <span className="text-xl">+</span> Create Banner
             </Link>

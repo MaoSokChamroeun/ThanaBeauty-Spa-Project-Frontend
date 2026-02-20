@@ -37,7 +37,7 @@ const ShowGallery = () => {
             </h1>
             <Link
               to={"/admin/dashboard/gallery/create"}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2"
+              className="bg-[#386324] hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2"
             >
               <span className="text-xl">+</span> Create Category
             </Link>
@@ -180,7 +180,7 @@ const ShowGallery = () => {
                       key={i + 1}
                       onClick={() => paginate(i + 1)}
                       className={`px-3 py-1 rounded-lg border transition-colors ${
-                        currentPage === i + 1 ? "bg-blue-600 text-white border-blue-600" : "bg-white hover:bg-gray-50 text-gray-700"
+                        currentPage === i + 1 ? "bg-[#386324] text-white " : "bg-white hover:bg-gray-50 text-gray-700"
                       }`}
                     >
                       {i + 1}

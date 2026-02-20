@@ -1,20 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import usePostFront from "../../hooks/frotendHook/postFront/usePostFront";
 import { useLang } from "../context/LanguageContext";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import i18n from "../api/translate3Lang";
 const Welcome = () => {
   const { postFront } = usePostFront();
   const { lang } = useLang();
+  const {t} = useTranslation();
+  useEffect(() => {
+    const savedLng = localStorage.getItem("lng");
+    if (savedLng && i18n.language !== savedLng) {
+      i18n.changeLanguage(savedLng);
+    }
+  }, []);
   return (
     <>
       <div className="w-full">
         <div className="container mx-auto">
           <div className="text-center">
-            <p className="text-center font-extrabold text-[40px] mt-15 text-gray-800">
-              Welcome To Thana Beauty Spa
+            <p className="text-center font-extrabold text-[40px] mt-15 text-gray-800 uppercase">
+              {t("welcome_title")}
             </p>
             <p className="text-center text-gray-800">
-              The Largest Luxury Spa in Thana Beauty Spa
+              {t("welcome_desc")}
             </p>
           </div>
           {postFront.slice(0, 1).map((items, index) => (

@@ -36,7 +36,7 @@ const ShowService = () => {
             </h1>
             <Link
               to={"/admin/dashboard/services/create"}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2"
+              className="bg-[#386324] hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2"
             >
               <span className="text-xl">+</span> Create Service
             </Link>
@@ -154,7 +154,7 @@ const ShowService = () => {
                         onClick={() => paginate(i + 1)}
                         className={`px-3.5 py-2 text-sm font-semibold rounded-lg cursor-pointer transition-all ${
                           currentPage === i + 1
-                            ? "bg-blue-600 text-white shadow-md shadow-blue-200"
+                            ? "bg-[#386324] text-white shadow-md shadow-blue-200"
                             : "bg-white text-gray-600 hover:bg-gray-100"
                         }`}
                       >

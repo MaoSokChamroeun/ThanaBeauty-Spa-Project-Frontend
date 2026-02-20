@@ -1,6 +1,5 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import i18n from 'i18next'; // Import ឱ្យចំ file i18n config របស់អ្នក
+import i18n from 'i18next';
 
 const LanguageContext = createContext();
 

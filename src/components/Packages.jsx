@@ -1,24 +1,32 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import httpUrl from "../components/api/httpUrl";
 import useFrontPackage from "../hooks/frotendHook/useFrontPackage";
 import { useLang } from "../components/context/LanguageContext";
+import { useTranslation } from "react-i18next";
+import i18n from "./api/translate3Lang";
 
 const Packages = () => {
   const { frontPackage: services = [] } = useFrontPackage();
   const { lang } = useLang();
+  const {t} = useTranslation();
 
+  useEffect(() => {
+    const savedLng = localStorage.getItem("lng");
+    if (savedLng && i18n.language !== savedLng) {
+      i18n.changeLanguage(savedLng);
+    }
+  }, []);
   return (
     <div className="w-full mt-15 bg-[#386324]">
       <div className="container mx-auto">
-        <div className="mx-auto sm:w-[500px] text-center p-4">
-          <p className="text-[35px] font-extrabold p-2 text-white">
-            Recommended Spa Packages
+        <div className="mx-auto sm:w-[500px] lg:w-[800px] xl:w-[800px] text-center p-4">
+          <p className="text-[35px] font-extrabold p-2 text-white uppercase">
+            {t('package_title')}
           </p>
           <p className="text-white">
-            Indulge yourself or with your loved one by our unique spa packages
-            available only at the Mudita Spa
+            {t('package_desc')}
           </p>
         </div>
 
