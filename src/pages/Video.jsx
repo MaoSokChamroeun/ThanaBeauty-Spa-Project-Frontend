@@ -15,7 +15,7 @@ const Video = () => {
               <img
                 src={galery}
                 alt="Spa Banner"
-                className="w-full h-[400px] md:h-[400px] ​lg:h-[950px] object-cover"
+                className="w-full h-[400px] md:h-[400px] ​lg:h-[950px] xl:h-[950px] object-cover"
               />
             </figure>
           </div>
