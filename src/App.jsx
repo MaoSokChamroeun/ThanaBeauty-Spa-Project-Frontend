@@ -38,7 +38,7 @@ import BlogPost from "./pages/BlogPost.jsx";
 import PostSlug from "./components/blogPostSlug/PostSlug.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import ShowGallery from "./Admin/gallery/ShowGallery.jsx";
-import CreateGallery from "./Admin/gallery/createGallery.jsx";
+import CreateGallery from "./Admin/gallery/CreateGallery.jsx";
 import UpdateGallery from "./Admin/gallery/UpdateGallery.jsx";
 import Video from "./pages/Video.jsx";
 import ShowVideo from "./Admin/adVideo/ShowVideo.jsx";
