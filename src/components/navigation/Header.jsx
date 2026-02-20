@@ -4,6 +4,7 @@ import LanguageSwitcher from "../LanguageSwitcher";
 import category from "../../hooks/frotendHook/category";
 import { useTranslation } from "react-i18next";
 import i18n from "../api/translate3Lang";
+import logo_spa from '../../assets/logo_new.jpg'
 import { useLang } from "../context/LanguageContext";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +35,6 @@ const Header = () => {
           <LanguageSwitcher />
         </div>
       </div>
-
       {/* --- MAIN NAVBAR --- */}
       <nav className="w-full h-16  bg-[#386324] text-white px-6 fixed mt-12 top-0 uppercase">
         <div className="container mx-auto h-full flex items-center justify-between">
@@ -44,7 +44,7 @@ const Header = () => {
               <figure>
                 <Link to={"/"}>
                   <img
-                    src="../../../public/logo_new.jpg"
+                    src={logo_spa}
                     alt=""
                     className="w-13 rounded-full"
                   />
