@@ -32,7 +32,7 @@ const Video = () => {
                   video.map((v) => (
                     <div className="lg:w-[450px] lg:h-[450px] xl:w-[450px] mx-auto " key={v._id}>
                       <video
-                        src={`http://localhost:5000/public/videos/${v.video}`}
+                        src={`${import.meta.env.VITE_API_URL}/public/videos/${v.video}`}
                         className="lg:w-[450px] lg:h-[450px] xl:w-[400px] xl:h-[450px] lg:h-[400px] xl:w-[400px] h-[350px] w-[350px] object-cover rounded-md"
                         controls
                       />
