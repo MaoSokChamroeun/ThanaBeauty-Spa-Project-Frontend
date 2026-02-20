@@ -8,7 +8,7 @@ const useServiceFront = () => {
   const fetchPublicServices = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}api/services/public`
+        `${import.meta.env.VITE_API_URL}/api/services/public`
       );
 
       setServicesFront(res.data.data || res.data.services || []);

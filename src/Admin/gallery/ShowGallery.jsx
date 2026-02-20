@@ -80,7 +80,7 @@ const ShowGallery = () => {
                         </td>
                         <td className="px-6 py-4 text-sm font-medium text-gray-900">
                           <img
-                            src={`${import.meta.env.VITE_API_URL}public/gallery/${item.image}`}
+                            src={`${import.meta.env.VITE_API_URL}/public/gallery/${item.image}`}
                             alt={item.title}
                             className="w-40 h-40 object-cover rounded-md"
                             onError={(e) => {

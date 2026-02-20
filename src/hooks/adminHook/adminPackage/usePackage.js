@@ -9,7 +9,7 @@ const usePackage = () => {
         setLoading(true);
         try {
             const token = sessionStorage.getItem("token");
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}api/package`, {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/package`, {
             headers: {
                 Authorization: `Bearer ${token}` 
             }

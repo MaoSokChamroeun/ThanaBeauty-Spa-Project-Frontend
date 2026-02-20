@@ -6,7 +6,7 @@ const useFrontCategory = () => {
     const [loading , setLoading] = useState(true);
     const fetchCategoryFrontend = async () => {
   try {
-    const res = await axios.get(`${import.meta.env.VITE_API_URL}api/category/public`);
+    const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/category/public`);
     setCategoriesFront(res.data.data || res.data.result || []);
   } catch (error) {
     console.log(error);

@@ -8,7 +8,7 @@ const useGetServiceCategory = (slug) => {
     const fetchServices = async () => {
       setLoading(true)
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}api/services/category/${slug}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/services/category/${slug}`);
         if(response.data.success){
           setLoading(false)
             setServicesCategory(response.data); 

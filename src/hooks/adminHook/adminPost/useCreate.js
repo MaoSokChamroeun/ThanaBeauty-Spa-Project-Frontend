@@ -42,7 +42,7 @@ const useCreate = () => {
     const fetchAuthor = async () => {
       try {
         const token = sessionStorage.getItem("token");
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}api/admin/profile`, {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data && res.data.success) {
@@ -74,7 +74,7 @@ const useCreate = () => {
 
     try {
       const token = sessionStorage.getItem("token");
-      const res = await axios.post("http://localhost:5000/api/posts", data, {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/posts`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

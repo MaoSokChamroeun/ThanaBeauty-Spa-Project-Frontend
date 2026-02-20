@@ -8,7 +8,7 @@ const useCategory = () => {
         try {
             setLoading(true);
             const token = sessionStorage.getItem("token");
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}api/category`, {
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/category`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

@@ -10,7 +10,7 @@ const useService = () => {
         setLoading(true);
         try {
             const token = sessionStorage.getItem("token");
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}api/services`, {
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/services`, {
             headers: {
                 Authorization: `Bearer ${token}` 
             }

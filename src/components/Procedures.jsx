@@ -79,7 +79,7 @@ const Procedures = () => {
               className="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] bg-white shadow-md"
             >
               <img
-                src={`${import.meta.env.VITE_API_URL}public/services/${item.image}`}
+                src={`${import.meta.env.VITE_API_URL}/public/services/${item.image}`}
                 alt={item.title?.[lang]}
                 className="w-full h-64 lg:h-80 object-cover"
               />

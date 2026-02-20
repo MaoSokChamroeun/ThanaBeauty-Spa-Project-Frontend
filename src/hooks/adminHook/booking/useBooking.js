@@ -9,7 +9,7 @@ const useBooking = () => {
         setLoading(true);
         try {
             const token = sessionStorage.getItem("token")
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}api/booking`,{
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/booking`,{
                 headers : {
                     Authorization : `Bearer ${token}`
                 }

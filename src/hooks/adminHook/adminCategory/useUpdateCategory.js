@@ -16,7 +16,7 @@ const useUpdateCategory = () => {
         setLoading(true);
         const token = sessionStorage.getItem("token");
         const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}api/category/${id}`,
+          `${import.meta.env.VITE_API_URL}/api/category/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -45,7 +45,7 @@ const useUpdateCategory = () => {
       setLoading(true);
       const token = sessionStorage.getItem("token");
       const res = await axios.put(
-        `${import.meta.env.VITE_API_URL}api/category/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/category/${id}`,
         formData,
         {
           headers: {

@@ -11,7 +11,7 @@ const useDeleteGallery = () => {
     try {
       setLoading(true);
       const token = sessionStorage.getItem('token')
-      const res = await axios.delete(`${import.meta.env.VITE_API_URL}api/gallery/${id}`,{
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}/api/gallery/${id}`,{
         headers : {
             Authorization : `Bearer ${token}`
         }

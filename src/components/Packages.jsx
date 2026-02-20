@@ -37,7 +37,7 @@ const Packages = () => {
             >
               <figure>
                 <img
-                  src={`${import.meta.env.VITE_API_URL}public/services/${item.image}`}
+                  src={`${import.meta.env.VITE_API_URL}/public/services/${item.image}`}
                   alt={item.title?.[lang] || item.title?.en}
                   className="w-full h-[400px] rounded-lg lg:rounded-none xl:rounded-none object-cover transition-transform duration-700 group-hover:scale-110"
                 />

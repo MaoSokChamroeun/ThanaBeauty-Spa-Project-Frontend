@@ -18,7 +18,7 @@ const useUpdateGallery = () => {
       setLoading(true);
       try {
         const token = sessionStorage.getItem("token")
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}api/gallery/${id}`,{
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/gallery/${id}`,{
           headers : {
             Authorization : `Bearer ${token}`
           }
@@ -26,7 +26,7 @@ const useUpdateGallery = () => {
         if (res.data.success) {
           setLoading(false);
           const item = res.data.data;
-          setPreview(`${import.meta.env.VITE_API_URL}public/gallery/${item.image}`);
+          setPreview(`${import.meta.env.VITE_API_URL}/public/gallery/${item.image}`);
         }
       } catch (error) {
         console.error("Error fetching banner:", error);
@@ -55,7 +55,7 @@ const useUpdateGallery = () => {
       setLoading(true);
       const token = sessionStorage.getItem("token");
       const res = await axios.put(
-        `${import.meta.env.VITE_API_URL}api/gallery/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/gallery/${id}`,
         data,{
           headers : {
             Authorization : `Bearer ${token}`

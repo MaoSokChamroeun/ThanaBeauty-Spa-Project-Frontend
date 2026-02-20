@@ -18,7 +18,7 @@ const useUpdateVideo = () => {
       try {
         const token = sessionStorage.getItem('token');
         const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}api/video/${id}`,{
+          `${import.meta.env.VITE_API_URL}/api/video/${id}`,{
             headers : {
                 Authorization : `Bearer ${token}`
             }
@@ -61,7 +61,7 @@ const useUpdateVideo = () => {
     try {
       const token = sessionStorage.getItem("token");
       const res = await axios.put(
-        `${import.meta.env.VITE_API_URL}api/video/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/video/${id}`,
         formData,
         {
           headers: {

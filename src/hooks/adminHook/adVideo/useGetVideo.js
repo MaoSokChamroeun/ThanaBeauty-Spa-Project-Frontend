@@ -8,7 +8,7 @@ const useGetVideo = () => {
         setLoading(true)
         try{
             const token = sessionStorage.getItem('token')
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}api/video`,{
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/video`,{
                 headers : {
                     Authorization : `Bearer ${token}`
                 }

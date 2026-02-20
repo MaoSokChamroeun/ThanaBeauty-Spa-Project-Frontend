@@ -24,7 +24,7 @@ const useCreateService = () => {
     const fetchCategories = async () => {
       try {
         const token = sessionStorage.getItem("token");
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}api/category`, {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/category`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -91,7 +91,7 @@ const useCreateService = () => {
     try {
       setLoading(true)
       const token = sessionStorage.getItem("token");
-      const res = await axios.post("http://localhost:5000/api/services", data, {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/services`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
