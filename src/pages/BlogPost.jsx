@@ -32,7 +32,7 @@ const BlogPost = () => {
                 <figure className="overflow-hidden rounded-md shadow-lg">
                   <img
                     className="w-full h-[400px] lg:h-[500px] lg:w-full xl:h-[500px] xl:w-full object-cover hover:scale-105 transition-transform duration-300"
-                    src={`${import.meta.env.VITE_API_URL}public/posts/${post.image}`}
+                    src={`${import.meta.env.VITE_API_URL}/public/posts/${post.image}`}
                     alt={post.title?.[lang]}
                   />
                 </figure>
