@@ -8,11 +8,11 @@ const Location = () => {
     <>
       <Layout>
         <div className="w-full">
-          <div className="w-full">
+          <div className="w-full mt-20">
             <figure>
               <img
                 src={cover}
-                className="w-full h-[500px] object-cover lg:h-[950px] xl:h-[950px]"
+                className="w-full h-[400px] object-cover lg:h-[950px] xl:h-[950px]"
                 alt=""
               />
             </figure>

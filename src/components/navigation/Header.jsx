@@ -61,9 +61,10 @@ const Header = () => {
               {t("home")}
             </Link>
             <li
-              className="relative cursor-pointer"
-              onMouseEnter={() => setIsMenuOpen(true)}
-              onMouseLeave={() => setIsMenuOpen(false)}
+              className={`relative cursor-pointer`}
+              // onMouseEnter={() => setIsMenuOpen(true)}
+              // onMouseLeave={() => setIsMenuOpen(false)}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <div className="flex items-center hover:text-white uppercase">
                 {t("spa-menu")}
@@ -86,7 +87,10 @@ const Header = () => {
 
               {isMenuOpen && (
                 <div className="absolute top-full left-0 pt-4 w-56">
-                  <div className="bg-white text-gray-800 shadow-2xl py-2 border-t-2 border-[#aa9fc7]">
+                  <div
+                    className="bg-white text-gray-800 shadow-2xl py-2 border-t-2 border-[#aa9fc7]"
+                   
+                  >
                     {categoriesFront.map((item, i) => {
                       const translationKey = item.name
                         .toLowerCase()
@@ -121,8 +125,14 @@ const Header = () => {
             {/* Desktop Media Dropdown */}
             <li
               className="relative cursor-pointer"
-              onMouseEnter={() => setIsMenuMedia(true)}
-              onMouseLeave={() => setIsMenuMedia(false)}
+              // onMouseEnter={() => setIsMenuMedia(true)}
+              // onMouseLeave={() => setIsMenuMedia(false)}
+              // onClick={() => {
+              //   if (window.innerWidth >= 768) {
+              //     setIsMenuMedia(!isMenuMedia);
+              //   }
+              // }}
+              onClick={() => setIsMenuMedia(!isMenuMedia)}
             >
               <div className="flex items-center hover:text-white uppercase">
                 {t("media")}
@@ -248,24 +258,24 @@ const Header = () => {
             >
               <ul className="pl-4 space-y-3 lowercase text-gray-300 border-l border-[#aa9fc7]">
                 {categoriesFront.map((item, i) => {
-                      const translationKey = item.name
-                        .toLowerCase()
-                        .trim()
-                        .replace("message", "massage")
-                        .replace("&", "")
-                        .replace(/\s+/g, "-")
-                        .replace(/-+/g, "-");
+                  const translationKey = item.name
+                    .toLowerCase()
+                    .trim()
+                    .replace("message", "massage")
+                    .replace("&", "")
+                    .replace(/\s+/g, "-")
+                    .replace(/-+/g, "-");
 
-                      return (
-                        <Link
-                          key={i}
-                          to={item.path}
-                          className="block px-5 py-3 border-b border-gray-200 last:border-none hover:bg-gray-50 hover:text-green-600 transition-colors"
-                        >
-                          {t(`categories.${translationKey}`, item.name)}
-                        </Link>
-                      );
-                    })}
+                  return (
+                    <Link
+                      key={i}
+                      to={item.path}
+                      className="block px-5 py-3 border-b border-gray-200 last:border-none hover:bg-gray-50 hover:text-green-600 transition-colors"
+                    >
+                      {t(`categories.${translationKey}`, item.name)}
+                    </Link>
+                  );
+                })}
               </ul>
             </div>
           </li>
@@ -303,7 +313,7 @@ const Header = () => {
                       onClick={() => setIsMobileNavOpen(false)}
                       className="block hover:text-white transition-colors"
                     >
-                       {t(`media_category.${item.toLowerCase()}`)}
+                      {t(`media_category.${item.toLowerCase()}`)}
                     </Link>
                   </li>
                 ))}
@@ -315,7 +325,7 @@ const Header = () => {
             {t("location")}
           </Link>
           <Link to={"/contact"} className="py-2 border-b border-gray-100">
-            {t('contact')}
+            {t("contact")}
           </Link>
 
           <li className="pt-4">

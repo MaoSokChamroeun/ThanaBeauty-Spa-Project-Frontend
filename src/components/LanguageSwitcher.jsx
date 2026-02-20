@@ -16,13 +16,13 @@ const LanguageSwitcher = () => {
         <button
           key={l.code}
           onClick={() => changeLanguage(l.code)}
-          className={`px-4 py-1 rounded-full text-xs cursor-pointer font-bold transition-all duration-300 ${
+          className={`px-3 p-1  rounded-full text-xs cursor-pointer font-bold transition-all duration-300 ${
             lang === l.code
               ? 'bg-white text-gray-800 shadow-lg scale-105'
               : 'text-gray-400 hover:text-white'
           }`}
         >
-          <img src={l.label} alt="" className='lg:w-8 xl:w-7   w-10 sm:w-5 md:w-5' />
+          <img src={l.label} alt="" className='lg:w-8 xl:w-5 xl:h-5 w-10 sm:w-5 md:w-5 rounded-full' />
         </button>
       ))}
     </div>

@@ -18,11 +18,11 @@ const Welcome = () => {
     <>
       <div className="w-full">
         <div className="container mx-auto">
-          <div className="text-center">
-            <p className="text-center font-extrabold text-[40px] mt-15 text-gray-800 uppercase">
+          <div className="text-center p-2">
+            <p className="text-center font-extrabold lg:text-[40px] xl:-text-[40px] text-[35px] mt-15 text-gray-800 uppercase">
               {t("welcome_title")}
             </p>
-            <p className="text-center text-gray-800">
+            <p className="text-center lg:text-[20px] xl:text-[20px] text-[16px]  text-gray-800">
               {t("welcome_desc")}
             </p>
           </div>
@@ -43,12 +43,12 @@ const Welcome = () => {
 
               <div className="flex flex-col justify-between">
                 <div className="w-full">
-                  <p className="text-[35px] font-extrabold text-gray-800">
+                  <p className="lg:text-[40px] xl:text-[40px] text-[25px] font-extrabold text-gray-800">
                     {items.title?.[lang]}
                   </p>
                 </div>
                 <div className="lg:w-[600px] mt-10 w-ful">
-                  <p className="text-gray-800">
+                  <p className="text-gray-800 text-[20px]">
                     {items.content?.[lang]}
                   </p>
                 </div>

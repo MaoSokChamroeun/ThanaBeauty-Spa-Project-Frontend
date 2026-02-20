@@ -10,12 +10,12 @@ const Video = () => {
     <>
       <Layout>
         <div className="w-full">
-          <div className="w-full mt-10">
+          <div className="w-full lg:mt-10 xl:mt-10 mt-20">
             <figure>
               <img
                 src={galery}
                 alt="Spa Banner"
-                className="w-full h-[400px] md:h-[950px] ​lg:h-[950px] object-cover"
+                className="w-full h-[400px] md:h-[400px] ​lg:h-[950px] object-cover"
               />
             </figure>
           </div>
