@@ -34,7 +34,7 @@ const Welcome = () => {
                   key={items._id || index}
                 >
                   <img
-                    src={`http://localhost:5000/public/posts/${items.image}`}
+                    src={`${import.meta.env.VITE_API_URL}public/posts/${items.image}`}
                     alt={items.title || "post image"}
                     className="w-full h-full object-cover rounded-md"
                   />

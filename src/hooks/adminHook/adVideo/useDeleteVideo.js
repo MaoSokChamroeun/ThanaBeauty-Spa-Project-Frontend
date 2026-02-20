@@ -11,7 +11,7 @@ const useDeleteVideo = () => {
     try {
       setLoading(true);
       const token = sessionStorage.getItem('token')
-      const res = await axios.delete(`http://localhost:5000/api/video/${id}`,{
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}api/video/${id}`,{
         headers : {
           Authorization : `Bearer ${token}`
         }

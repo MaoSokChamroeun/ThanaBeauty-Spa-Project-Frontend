@@ -42,7 +42,7 @@ const useCreateVideo = () => {
     try {
       const token = sessionStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/video", 
+        `${import.meta.env.VITE_API_URL}api/video`, 
         data,
         {
           headers: {

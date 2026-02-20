@@ -34,7 +34,7 @@ function ImageSlider() {
             }`}
           >
             <img
-              src={`http://localhost:5000/public/banners/${img.image}`}
+              src={`${import.meta.env.VITE_API_URL}public/banners/${img.image}`}
               className="w-full h-full object-cover"
               alt={`Slide ${index + 1}`}
               onError={(e) => {

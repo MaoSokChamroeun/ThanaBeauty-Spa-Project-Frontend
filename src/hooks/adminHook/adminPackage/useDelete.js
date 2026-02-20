@@ -8,7 +8,7 @@ const useDelete = () => {
     if (!confirmDelete) return;
     try {
       setLoading(true);
-      const res = await axios.delete(`http://localhost:5000/api/package/${id}`);
+      const res = await axios.delete(`${import.meta.env.VITE_API_URL}api/package/${id}`);
       if (res.data.success) {
         toast.success(res.data.message || "Deleted successfully");
         if (callback) callback(); 

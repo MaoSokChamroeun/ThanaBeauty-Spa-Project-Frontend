@@ -50,7 +50,7 @@ const useUpdatePost = () => {
     const fetchAuthor = async () => {
       try {
         const token = sessionStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/admin/profile", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}api/admin/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data.success) {
@@ -70,7 +70,7 @@ const useUpdatePost = () => {
       try {
         setLoading(true);
         const token = sessionStorage.getItem("token");
-        const res = await axios.get(`http://localhost:5000/api/posts/${id}`, {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}api/posts/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -86,7 +86,7 @@ const useUpdatePost = () => {
           });
 
           if (itemPost.image) {
-            setPreview(`http://localhost:5000/public/posts/${itemPost.image}`);
+            setPreview(`${import.meta.env.VITE_API_URL}public/posts/${itemPost.image}`);
           }
         }
       } catch (error) {
@@ -124,7 +124,7 @@ const useUpdatePost = () => {
       setLoading(true);
       const token = sessionStorage.getItem("token");
       const res = await axios.put(
-        `http://localhost:5000/api/posts/${id}`,
+        `${import.meta.env.VITE_API_URL}api/posts/${id}`,
         data,
         {
           headers: {

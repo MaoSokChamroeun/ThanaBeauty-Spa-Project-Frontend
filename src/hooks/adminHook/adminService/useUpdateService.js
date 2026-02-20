@@ -23,7 +23,7 @@ const useUpdateService = () => {
       try {
         setLoading(true);
         const token = sessionStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/category", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}api/category`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -46,7 +46,7 @@ const useUpdateService = () => {
         setLoading(true);
         const token = sessionStorage.getItem("token");
         const res = await axios.get(
-          `http://localhost:5000/api/services/${id}`,
+          `${import.meta.env.VITE_API_URL}api/services/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -65,7 +65,7 @@ const useUpdateService = () => {
             category: item.category?._id || item.category || "",
           });
           if (item.image) {
-            setPreview(`http://localhost:5000/public/services/${item.image}`);
+            setPreview(`${import.meta.env.VITE_API_URL}public/services/${item.image}`);
           }
         }
       } catch (error) {
@@ -120,7 +120,7 @@ const useUpdateService = () => {
       setLoading(true);
       const token = sessionStorage.getItem("token");
       const res = await axios.put(
-        `http://localhost:5000/api/services/${id}`,
+        `${import.meta.env.VITE_API_URL}api/services/${id}`,
         data,
         {
           headers: {

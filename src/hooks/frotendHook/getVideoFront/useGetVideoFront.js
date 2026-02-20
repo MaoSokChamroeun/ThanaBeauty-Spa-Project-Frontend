@@ -7,7 +7,7 @@ const useGetVideoFront = () => {
     const fetchAllVideo = async () => {
         setLoading(true)
         try{
-            const res = await axios.get('http://localhost:5000/api/video/public');
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}api/video/public`);
             if (res.data.success) {
                 setLoading(false)
                 setVideo(res.data.data);

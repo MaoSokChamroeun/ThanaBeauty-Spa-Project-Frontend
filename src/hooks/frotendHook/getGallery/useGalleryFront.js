@@ -7,7 +7,7 @@ const useGalleryFront = () => {
     const fetchAllBannerFront = async () =>{
         setLoading(true)
         try{
-            const res = await axios.get(`http://localhost:5000/api/gallery/public`);
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}api/gallery/public`);
             setLoading(false)
             setGalleryFront(res.data.data)
         }catch(error){

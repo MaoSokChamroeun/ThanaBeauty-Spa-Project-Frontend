@@ -13,7 +13,7 @@ const useDeleteService = () => {
     try {
       setLoading(true);
       const res = await axios.delete(
-        `http://localhost:5000/api/services/${id}`,
+        `${import.meta.env.VITE_API_URL}api/services/${id}`,
       );
       if (res.data.seccess || res.data.success) {
         setLoading(false);

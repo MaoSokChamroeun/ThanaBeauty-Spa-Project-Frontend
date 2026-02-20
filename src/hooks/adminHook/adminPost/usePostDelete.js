@@ -14,7 +14,7 @@ const usePostDelete = () => {
       setLoading(true);
       const token = sessionStorage.getItem("token")
       const res = await axios.delete(
-        `http://localhost:5000/api/posts/${id}`,{
+        `${import.meta.env.VITE_API_URL}api/posts/${id}`,{
             headers : {
                 Authorization : `Bearer ${token}`
             }

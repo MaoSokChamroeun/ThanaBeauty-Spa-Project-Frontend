@@ -73,7 +73,7 @@ const ShowService = () => {
                         </td>
                         <td className="px-6 py-4">
                           <img
-                            src={`http://localhost:5000/public/services/${item.image}`}
+                            src={`${import.meta.env.VITE_API_URL}public/services/${item.image}`}
                             alt={item.title?.en || "service"}
                             className="w-12 h-12 object-cover rounded-md border border-gray-200"
                             onError={(e) => {

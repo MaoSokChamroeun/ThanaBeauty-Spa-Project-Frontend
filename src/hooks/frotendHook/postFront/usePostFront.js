@@ -7,7 +7,7 @@ const usePostFront = () => {
      const fetchPostsFront = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/posts/public");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}api/posts/public`);
 
       if (res.data.success) {
         setLoading(false);

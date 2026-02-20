@@ -1,7 +1,6 @@
 
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import httpUrl from "../components/api/httpUrl";
 import useFrontPackage from "../hooks/frotendHook/useFrontPackage";
 import { useLang } from "../components/context/LanguageContext";
 import { useTranslation } from "react-i18next";
@@ -38,7 +37,7 @@ const Packages = () => {
             >
               <figure>
                 <img
-                  src={`${httpUrl}/public/services/${item.image}`}
+                  src={`${import.meta.env.VITE_API_URL}public/services/${item.image}`}
                   alt={item.title?.[lang] || item.title?.en}
                   className="w-full h-[400px] rounded-lg lg:rounded-none xl:rounded-none object-cover transition-transform duration-700 group-hover:scale-110"
                 />

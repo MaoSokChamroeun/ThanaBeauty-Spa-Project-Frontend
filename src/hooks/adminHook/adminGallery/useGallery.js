@@ -9,7 +9,7 @@ const useGallery = () => {
         setLoading(true)
         try{
             const token = sessionStorage.getItem('token');
-            const res = await axios.get('http://localhost:5000/api/gallery/public',{
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}api/gallery/public`,{
                 headers : {
                     Authorization : `Bearer ${token}`
                 }

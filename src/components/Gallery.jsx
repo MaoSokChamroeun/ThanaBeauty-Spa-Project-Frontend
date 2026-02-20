@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../layout/Layout";
 import useGalleryFront from "../hooks/frotendHook/getGallery/useGalleryFront";
-import httpUrl from "./api/httpUrl";
 import Loading from "./Loading";
 import gallery from '../assets/gallery.png'
 
@@ -32,9 +31,9 @@ const Gallery = () => {
               <div
                 key={item._id}
                 className="relative overflow-hidden cursor-pointer group rounded-sm shadow-md"
-                onClick={() => setSelectedImg(`${httpUrl}/public/gallery/${item.image}`)}               >
+                onClick={() => setSelectedImg(`${import.meta.env.VITE_API_URL}public/gallery/${item.image}`)}               >
                 <img
-                  src={`${httpUrl}/public/gallery/${item.image}`}
+                  src={`${import.meta.env.VITE_API_URL}public/gallery/${item.image}`}
                   alt={`Gallery ${item.id}`}
                   className="object-cover w-full h-[330px] transition-transform duration-700 group-hover:scale-120"
                 />

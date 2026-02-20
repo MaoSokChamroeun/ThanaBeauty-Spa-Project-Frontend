@@ -21,7 +21,7 @@ const PostSlug = () => {
                 <figure className="overflow-hidden rounded-md shadow-lg">
                   <img
                     className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-300"
-                    src={`http://localhost:5000/public/posts/${post.image}`}
+                    src={`${import.meta.env.VITE_API_URL}public/posts/${post.image}`}
                     alt={post.title?.[lang]}
                   />
                 </figure>

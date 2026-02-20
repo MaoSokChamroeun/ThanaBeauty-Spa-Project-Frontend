@@ -36,7 +36,7 @@ const useCreateBanner = () => {
     try {
       setLoading(true);
       const token = sessionStorage.getItem("token");
-      const res = await axios.post(`http://localhost:5000/api/banner`, data, {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}api/banner`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

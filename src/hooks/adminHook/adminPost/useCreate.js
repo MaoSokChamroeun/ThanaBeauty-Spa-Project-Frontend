@@ -10,10 +10,10 @@ const useCreate = () => {
     slug: "",
     tags: "",
     author: "",
-    isPublished: "false", // គួរដាក់ default ជា string "false" បើប្រើជាមួយ form-data
+    isPublished: "false", 
   });
 
-  const [authorList, setAuthorList] = useState([]); // ប្តូរឈ្មោះកុំឱ្យស្ទួនជាមួយ field ក្នុង formData
+  const [authorList, setAuthorList] = useState([]); 
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const useCreate = () => {
     const fetchAuthor = async () => {
       try {
         const token = sessionStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/admin/profile", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}api/admin/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data && res.data.success) {

@@ -23,7 +23,7 @@ const useUpdatePackage = () => {
       try {
         setLoading(true)
         const token = sessionStorage.getItem("token")
-        const res = await axios.get(`http://localhost:5000/api/package/${id}`,{
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}api/package/${id}`,{
           headers : {
             Authorization : `Bearer ${token}`
           }
@@ -35,7 +35,7 @@ const useUpdatePackage = () => {
             price: res.data.data.price,
             description : res.data.data.description
           });
-          setPreview(`http://localhost:5000/public/packages/${res.data.data.image}`);
+          setPreview(`${import.meta.env.VITE_API_URL}public/packages/${res.data.data.image}`);
         }
       } catch (error) {
         console.error("Fetch error", error);
@@ -71,7 +71,7 @@ const handleUpdateSubmit = async (e) => {
   try {
     setLoading(true)
     const token = sessionStorage.getItem("token")
-    const res = await axios.put(`http://localhost:5000/api/package/${id}`, data, {
+    const res = await axios.put(`${import.meta.env.VITE_API_URL}api/package/${id}`, data, {
       headers: {
          "Content-Type": "multipart/form-data",
          Authorization : `Bearer ${token}`

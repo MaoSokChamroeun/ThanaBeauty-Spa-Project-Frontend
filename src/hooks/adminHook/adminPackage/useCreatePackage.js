@@ -35,7 +35,7 @@ const useCreatePackage = () => {
     try {
       setLoading(true);
       const token = sessionStorage.getItem("token");
-      const res = await axios.post("http://localhost:5000/api/package", data, {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}api/package`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

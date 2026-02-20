@@ -17,7 +17,7 @@ const useBookingFront = () => {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/package/public");
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}api/package/public`);
         if (res.data.success) {
           setPackages(res.data.data);
         }
@@ -37,7 +37,7 @@ const useBookingFront = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/booking/public", formData);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}api/booking/public`, formData);
       if (res.data.success) {
         toast.success(res.data.message || 'Order successfully')
         setFormData({ client_name: "", phone: "", service: "", package: "", description: "" });

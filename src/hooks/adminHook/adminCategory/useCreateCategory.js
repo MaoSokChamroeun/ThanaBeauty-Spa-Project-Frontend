@@ -18,7 +18,7 @@ const useCreateCategory = () => {
             setLoading(true)
             const token = sessionStorage.getItem("token");
             const res = await axios.post(
-                "http://localhost:5000/api/category", 
+                `${import.meta.env.VITE_API_URL}api/category`, 
                 formData, 
                 {
                     headers: {

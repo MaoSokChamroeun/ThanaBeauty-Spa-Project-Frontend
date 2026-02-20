@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
 const useCreateGallery = () => {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -36,7 +35,7 @@ const useCreateGallery = () => {
     try {
       setLoading(true);
       const token = sessionStorage.getItem("token");
-      const res = await axios.post(`http://localhost:5000/api/gallery`, data, {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/gallery`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
