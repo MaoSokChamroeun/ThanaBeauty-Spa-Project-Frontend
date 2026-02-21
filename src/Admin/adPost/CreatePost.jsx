@@ -4,6 +4,7 @@ import useCreate from "../../hooks/adminHook/adminPost/useCreate";
 import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import HeroBar from "../HeroBar";
+import Loading from "../../components/Loading";
 
 const CreatePost = () => {
   const navigate = useNavigate();
