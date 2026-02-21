@@ -75,7 +75,7 @@ const ShowPackage = () => {
                         </td>
                         <td className="px-6 py-4">
                           <img
-                            src={`${import.meta.env.VITE_API_URL}public/packages/${item.image}`}
+                            src={item.image}
                             alt={item.package_name}
                             className="w-12 h-12 object-cover rounded-md border border-gray-200"
                           />

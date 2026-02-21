@@ -84,7 +84,7 @@ const ShowVideo = () => {
                         </td>
                         <td className="px-6 py-4 text-sm font-medium text-gray-900">
                           <video
-                            src={`${import.meta.env.VITE_API_URL}/public/videos/${item.video}`}
+                            src={item.video}
                             className="w-40 h-40 object-cover rounded-md"
                             controls
                             onError={(e) => {
