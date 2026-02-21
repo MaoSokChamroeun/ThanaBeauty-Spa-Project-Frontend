@@ -31,9 +31,9 @@ const Gallery = () => {
               <div
                 key={item._id}
                 className="relative overflow-hidden cursor-pointer group rounded-sm shadow-md"
-                onClick={() => setSelectedImg(`${import.meta.env.VITE_API_URL}public/gallery/${item.image}`)}               >
+                onClick={() => setSelectedImg(`${item.image}`)}               >
                 <img
-                  src={`${import.meta.env.VITE_API_URL}public/gallery/${item.image}`}
+                  src={item.image}
                   alt={`Gallery ${item.id}`}
                   className="object-cover w-full h-[330px] transition-transform duration-700 group-hover:scale-120"
                 />

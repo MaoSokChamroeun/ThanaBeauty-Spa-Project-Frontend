@@ -36,7 +36,7 @@ const SignatureTreatment = () => {
                   {/* Image */}
                   <div className="md:col-span-1">
                     <img
-                      src={`${import.meta.env.VITE_API_URL}/public/services/${item.image}`}
+                      src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover"
                     />
