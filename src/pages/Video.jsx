@@ -22,7 +22,7 @@ const Video = () => {
 
           <div className="max-w-7xl mx-auto">
             <div className="text-center p-4 lg:p-6 xl:p-6">
-                <h1 className="text-7xl​ lg:text-7xl md:text-4xl font-bold">Our Video</h1>
+                <h1 className="xl:text-7xl text-[35px]​ lg:text-7xl md:text-4xl font-bold">Our Video</h1>
                 <p>This all about Video Our Shop </p>
             </div>
             <div className="w-full lg:p-4 xl:p-4">
