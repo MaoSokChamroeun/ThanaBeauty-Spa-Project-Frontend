@@ -223,8 +223,8 @@ const Header = () => {
       </div>
       <div
         className={`
-        md:hidden fixed absolute top-28 left-0 w-full bg-[#1a5400] shadow-2xl overflow-hidden transition-all duration-500 ease-in-out z-50
-        ${isMobileNavOpen ? "max-h-[90vh] opacity-100" : "max-h-0 opacity-0"}
+        md:hidden overflow-y-auto fixed absolute top-28 left-0 w-full bg-[#1a5400] shadow-2xl overflow-hidden transition-all duration-500 ease-in-out z-50
+        ${isMobileNavOpen ? "max-h-[100vh] opacity-100" : "max-h-0 opacity-0"}
       `}
       >
         <ul className="flex flex-col p-6 space-y-4 text-white uppercase text-sm font-medium">
