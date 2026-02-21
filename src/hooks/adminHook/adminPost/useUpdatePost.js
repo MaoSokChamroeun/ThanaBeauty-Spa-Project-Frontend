@@ -86,7 +86,7 @@ const useUpdatePost = () => {
           });
 
           if (itemPost.image) {
-            setPreview(`${import.meta.env.VITE_API_URL}/public/posts/${itemPost.image}`);
+            setPreview(itemPost.image);
           }
         }
       } catch (error) {

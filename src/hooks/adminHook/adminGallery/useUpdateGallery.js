@@ -26,7 +26,7 @@ const useUpdateGallery = () => {
         if (res.data.success) {
           setLoading(false);
           const item = res.data.data;
-          setPreview(`${import.meta.env.VITE_API_URL}/public/gallery/${item.image}`);
+          setPreview(item.image);
         }
       } catch (error) {
         console.error("Error fetching banner:", error);

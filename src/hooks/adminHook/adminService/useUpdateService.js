@@ -65,7 +65,7 @@ const useUpdateService = () => {
             category: item.category?._id || item.category || "",
           });
           if (item.image) {
-            setPreview(`${import.meta.env.VITE_API_URL}/public/services/${item.image}`);
+            setPreview(item.image);
           }
         }
       } catch (error) {

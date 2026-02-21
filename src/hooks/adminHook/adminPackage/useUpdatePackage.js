@@ -35,7 +35,7 @@ const useUpdatePackage = () => {
             price: res.data.data.price,
             description : res.data.data.description
           });
-          setPreview(`${import.meta.env.VITE_API_URL}/public/packages/${res.data.data.image}`);
+          setPreview(res.data.data.image);
         }
       } catch (error) {
         console.error("Fetch error", error);
