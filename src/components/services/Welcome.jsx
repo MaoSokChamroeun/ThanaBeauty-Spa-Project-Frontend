@@ -30,7 +30,7 @@ const Welcome = () => {
             <div className="w-full grid grid-cols-1 mt-10 lg:grid-cols-2 xl:grid-cols-2 gap-6 p-2"  key={items._id || index}>
               <div className="sm:w-full lg:w-full xl:w-full">
                 <figure
-                  className="h-[400px] lg:h-[500px] w-full rounded-md"
+                  className="h-[350px] lg:h-[500px] w-full rounded-md"
                   key={items._id || index}
                 >
                   <img

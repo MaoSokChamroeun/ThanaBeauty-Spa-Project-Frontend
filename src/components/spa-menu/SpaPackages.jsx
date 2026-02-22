@@ -37,7 +37,7 @@ const SpaPackages = ({ categorySlug }) => {
             {t('experience_msg')} {activePage.title}. {t('rejuvenate_msg')}
           </p>
 
-          <div className="max-w-7xl p-2 mx-auto space-y-6 sm:mt-6 md:p-2 sm:p-2">
+          <div className="max-w-7xl p-2 mx-auto  space-y-6 sm:mt-6 md:p-2 sm:p-2">
             {loading && <Loading />}
             {!loading && servicesCategory?.data && servicesCategory.data.length > 0 ? (
               servicesCategory.data.map((item, index) => (
