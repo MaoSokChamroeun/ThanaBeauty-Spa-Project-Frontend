@@ -103,11 +103,10 @@ function App() {
             <Route path="/services/cupping-message"
               element={<SpaPackages categorySlug="cupping-message" />}
             />
-
             {/* slug post */}
             <Route path="/post/:slug"
-              element={<PostSlug postSlug = "moon-light-spa-massage-promotion" />}
-            /> 
+              element={<PostSlug/>}
+            />
             <Route path="/admin/login" element={<Login />} />
             <Route path="/admin/dashboard"
               element={

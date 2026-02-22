@@ -30,7 +30,6 @@ const SpaPackages = ({ categorySlug }) => {
 
         <div className="mt-10 max-w-7xl mx-auto">
           <h1 className="text-center text-[35px] font-extrabold uppercase tracking-wide">
-            
             {activePage.title}
           </h1>
           <p className="text-center mt-4 text-gray-600 max-w-2xl mx-auto">

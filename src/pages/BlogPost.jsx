@@ -27,7 +27,6 @@ const BlogPost = () => {
               key={post._id || index}
               className={`w-full grid grid-cols-1 lg:flex ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 mb-20 items-center`}
             >
-              {/* Image Section */}
               <div className="w-full lg:w-1/2">
                 <figure className="overflow-hidden rounded-md shadow-lg">
                   <img
