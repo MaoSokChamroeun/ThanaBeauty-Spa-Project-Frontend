@@ -23,6 +23,7 @@ const PostSlug = () => {
   return (
     <Layout>
       <div className="mt-20">
+    
         <figure className="w-full mt-20">
           <img
             src={activePage.image}
@@ -30,11 +31,13 @@ const PostSlug = () => {
             alt={activePage.title}
           />
         </figure>
-      
+        {/* <div className="w-full h-auto bg-[#386324] absolute"></div> */}
+        <div className="bg-[#386324]">
         <div className="max-w-7xl mx-auto pt-5">
+            
           <div className="lg:p-4 xl:p-4 p-4 lg:mb-5 xl:mb-5">
-            <h2 className="text-[35px] lg:text-[50px] xl:text-[50px] font-bold text-[#386324] leading-tight text-center">{t(`slug_post_title.${slug}-title`)}</h2>
-            <p className="text-center lg:w-[900px] mx-auto mt-4 lg:mt-4 xl:mt-4">{t(`slug_post_desc.${slug}`)}</p>
+            <h2 className="text-[35px] lg:text-[50px] xl:text-[50px] font-bold text-white leading-tight text-center">{t(`slug_post_title.${slug}-title`)}</h2>
+            <p className="text-center lg:w-[900px] mx-auto mt-4 lg:mt-4 xl:mt-4 text-white">{t(`slug_post_desc.${slug}`)}</p>
           </div>
           {postSlug.map((post, index) => (
             <div
@@ -54,27 +57,28 @@ const PostSlug = () => {
               {/* Text Section */}
               <div className="w-full lg:w-1/2 p-5">
                 <div className="max-w-xl">
-                  <p className="text-[35px] lg:text-[50px] xl:text-[50px] font-bold text-[#386324] leading-tight">
+                  <p className="text-[35px] lg:text-[50px] xl:text-[50px] font-bold text-white leading-tight">
                     {post.title?.[lang]}
                   </p>
-                  <p className="text-[18px] lg:text-[20px] xl:text-[22px] mt-4 text-gray-600 line-clamp-3">
+                  <p className="text-[18px] lg:text-[20px] xl:text-[22px] mt-4 text-white line-clamp-3">
                     {post.content?.[lang]}
                   </p>
 
                   <div className="mt-5">
-                    <p className="font-semibold text-gray-500">Tags</p>
-                    <span className="inline-block mt-1 bg-gray-100 px-3 py-5 rounded-full text-sm">
+                    <p className="font-semibold text-gray-200">Tags</p>
+                    <span className="inline-block mt-1 bg-gray-100 px-3 py-3 rounded-full text-sm">
                       {post.tags}
                     </span>
                   </div>
 
-                  <button className="mt-10 bg-[#386324] hover:bg-black transition-colors w-40 h-12 text-white rounded-md">
+                  <button className="mt-10 bg-white  transition-colors w-40 h-12 text-black  rounded-md">
                     <Link to={`/booking`}>Book Now</Link>
                   </button>
                 </div>
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </Layout>
