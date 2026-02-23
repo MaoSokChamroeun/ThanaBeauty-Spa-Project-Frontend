@@ -12,7 +12,7 @@ const Contact = () => {
                 src={contact}
                 alt="Contact Poster"
                 className="
-                w-full h-[400px] object-cover md:w-[800px] mx-auto lg:w-full xl:w-full xl:h-[700px] lg:h-[600px]"
+                w-full h-[400px] object-cover md:w-full mx-auto lg:w-full xl:w-full xl:h-[700px] lg:h-[600px]"
               />
         </div>
         <div className="max-w-7xl mx-auto p-2">

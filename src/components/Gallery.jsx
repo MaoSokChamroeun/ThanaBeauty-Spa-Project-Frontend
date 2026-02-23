@@ -10,12 +10,12 @@ const Gallery = () => {
   return (
     <Layout>
       <div className="w-full font-josefin">
-        <div className="w-full lg:mt-10 xl:mt-10 md:mt-20 mt-20">
+        <div className="w-full lg:mt-25 xl:mt-25 md:mt-20 mt-20">
           <figure>
             <img
               src={gallery}
               alt="Spa Banner"
-              className="w-full h-[400px] md:h-[400px] ​lg:h-[950px] xl:h-[950px] object-cover"
+              className="w-full h-[400px] md:h-[400px] ​lg:h-[600px] xl:h-[700px] object-cover"
             />
           </figure>
         </div>

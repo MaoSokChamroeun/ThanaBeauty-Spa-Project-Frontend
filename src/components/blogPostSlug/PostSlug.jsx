@@ -24,10 +24,10 @@ const PostSlug = () => {
     <Layout>
       <div className="mt-20">
     
-        <figure className="w-full mt-20">
+        <figure className="w-full mt-20 xl:mt-25 lg:mt-25">
           <img
             src={activePage.image}
-            className="object-cover w-full h-[400px] lg:h-[950px] xl:h-[950px]"
+            className="object-cover w-full h-[400px] lg:h-[600px] xl:h-[700px]"
             alt={activePage.title}
           />
         </figure>

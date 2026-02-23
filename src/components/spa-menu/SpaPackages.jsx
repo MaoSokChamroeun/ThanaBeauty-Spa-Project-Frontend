@@ -20,10 +20,10 @@ const SpaPackages = ({ categorySlug }) => {
   return (
     <Layout>
       <div className="w-full">
-        <figure className="w-full mt-20">
+        <figure className="w-full mt-25">
           <img
             src={activePage.image}
-            className="object-cover w-full h-[400px] lg:h-[950px] xl:h-[950px]"
+            className="object-cover w-full h-[400px] lg:h-[600px] xl:h-[700px]"
             alt={activePage.title}
           />
         </figure>
