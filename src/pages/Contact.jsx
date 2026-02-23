@@ -6,10 +6,18 @@ import Map from "../components/Map";
 const Contact = () => {
   return (
     <Layout>
-      <div className="container-fluid px-4 mt-40">
-        <div className="max-w-7xl mx-auto">
+      <div className="container-fluid mt-25">
+        <div className="w-full">
+           <img
+                src={contact}
+                alt="Contact Poster"
+                className="
+                w-full h-[400px] object-cover md:w-[800px] mx-auto lg:w-full xl:w-full xl:h-[700px] lg:h-[600px]"
+              />
+        </div>
+        <div className="max-w-7xl mx-auto p-2">
           <p
-            className="text-center font-semibold mb-6 text-[35px]"
+            className="text-center font-semibold text-[35px] xl:mt-10"
             data-aos="fade-up"
             data-aos-duration="300"
             data-aos-delay="300"
@@ -19,21 +27,17 @@ const Contact = () => {
           </p>
 
           {/* Responsive grid */}
-          <div className="mt-10 grid md:grid-cols-1 lg:grid-cols-2 sm:grid-cols-1 gap-6">
+          <div className="lg:mt-10 xl:mt-10 grid md:grid-cols-1 lg:grid-cols-2 sm:grid-cols-1 gap-6">
             {/* Image */}
             <div
-              className="w-full"
+              className="w-full xl:h-[520px] lg:h-[400px] rounded-md overflow-hidden shadow-lg"
               data-aos="fade-up"
               data-aos-duration="500"
               data-aos-delay="500"
               data-aos-easing="ease-in-out"
+              
             >
-              <img
-                src={contact}
-                alt="Contact Poster"
-                className="
-                w-full h-[400px] object-cover rounded-lg md:w-[800px] mx-auto lg:w-[600px] lg:h-[600px]"
-              />
+              <Map />
             </div>
 
             {/* Form */}
@@ -122,7 +126,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="mt-32">
+      {/* <div className="mt-32">
         <h1
           className="text-center text-[35px] mb-5"
           data-aos="fade-up"
@@ -134,7 +138,7 @@ const Contact = () => {
           Our Location
         </h1>
        <Map />
-      </div>
+      </div> */}
     </Layout>
   );
 };

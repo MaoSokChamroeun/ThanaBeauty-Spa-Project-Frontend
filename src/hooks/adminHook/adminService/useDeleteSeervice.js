@@ -12,10 +12,16 @@ const useDeleteService = () => {
 
     try {
       setLoading(true);
+      const token = sessionStorage.getItem("token");
       const res = await axios.delete(
         `${import.meta.env.VITE_API_URL}/api/services/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
-      if (res.data.seccess || res.data.success) {
+      if (res.data.success) {
         setLoading(false);
         toast.success(res.data.message || "Deleted Services successfully");
         if (callback) callback(); 

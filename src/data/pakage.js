@@ -27,7 +27,7 @@ const packages = [
       steps: [
         "Four-hand massage",
         "Warm compress",
-        " with oil based on guest's preference"
+        "with oil based on guest's preference"
       ]
     }
   },
