@@ -145,7 +145,6 @@ const Booking = () => {
           </form>
         </div>
 
-         */}
       </div>
     </Layout>
   );
