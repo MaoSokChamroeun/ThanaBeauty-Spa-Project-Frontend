@@ -55,7 +55,7 @@ const Packages = () => {
                 <div className="flex justify-center mt-5">
                   <Link
                     to={item.category?.path || "#"}
-                    className="cursor-pointer border border-gray-100 text-white p-3 hover:bg-white hover:text-black transition-all duration-300"
+                    className="cursor-pointer border border-gray-100 lg:rounded-4xl lg:w-40 lg:text-center xl:rounded-4xl xl:w-40 xl:text-center text-white p-3 hover:bg-white hover:text-black transition-all duration-300"
                   >
                     Read More
                   </Link>

@@ -242,7 +242,7 @@ const Procedures = () => {
               />
 
               <div className="p-6 text-center">
-                <h3 className="text-[#386324] font-bold text-xl mb-4 truncate">
+                <h3 className="text-[#386324] font-bold text-[35px] mb-4 truncate">
                   {item.title?.[lang]}
                 </h3>
 
