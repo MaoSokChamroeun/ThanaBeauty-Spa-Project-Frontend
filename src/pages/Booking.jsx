@@ -145,7 +145,7 @@ const Booking = () => {
           </form>
         </div>
 
-        <Map />
+         */}
       </div>
     </Layout>
   );
