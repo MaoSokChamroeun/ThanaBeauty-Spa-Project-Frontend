@@ -12,8 +12,8 @@ const Booking = () => {
 
   return (
     <Layout>
-      <div className="w-full mt-28 p-2 lg:p-0">
-        <figure className="h-[400px] lg:h-[900px] xl:h-[900px]">
+      <div className="w-full mt-25 p-2 lg:p-0">
+        <figure className="h-[400px] lg:h-[700px] xl:h-[700px]">
           <img src={banner} alt="" className="object-cover w-full h-full rounded-lg lg:rounded-0 xl:rounded-none" />
         </figure>
         <div className="max-w-7xl mx-auto">
