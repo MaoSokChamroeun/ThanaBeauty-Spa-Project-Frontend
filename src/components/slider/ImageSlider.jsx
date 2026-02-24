@@ -24,7 +24,7 @@ function ImageSlider() {
   if (banners.length === 0)
     return <div className="w-full h-[400px] bg-gray-200 animate-pulse" />;
   return (
-    <div className="relative w-full h-[400px] mt-21 lg:mt-15 xl:mt-15 overflow-hidden group lg:h-[900px]">
+    <div className="relative w-full h-[400px] mt-21 lg:mt-15 xl:mt-15 overflow-hidden group lg:h-[900px] xl:h-[900px]">
       <div className="relative h-full w-full ">
         {banners.map((img, index) => (
           <div
