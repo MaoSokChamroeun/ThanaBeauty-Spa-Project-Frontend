@@ -20,7 +20,7 @@ const Location = () => {
 
           <div className="max-w-full mx-auto mt-5 lg:grid-cols-2 lg:mt-10 xl:mt-10">
             <p className="text-center font-extrabold text-[35px] mb-10">
-              Location
+              Our Location
             </p>
             <div>
               <Map />

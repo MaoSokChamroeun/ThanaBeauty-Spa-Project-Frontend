@@ -44,6 +44,7 @@ import Video from "./pages/Video.jsx";
 import ShowVideo from "./Admin/adVideo/ShowVideo.jsx";
 import CreateVideo from "./Admin/adVideo/CreateVideo.jsx";
 import UpdateVideo from "./Admin/adVideo/UpdateVideo.jsx";
+import MenuIcons from "./components/MenuIcons.jsx";
 function App() {
   const {lang} = useLang();
   const fontClass = lang === 'kh' ? 'font-kantumruy' : 'font-josefin';
@@ -60,6 +61,7 @@ function App() {
             <Route path="/location" element={<Location />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/video" element = {<Video />} />
+            <Route path="/icon" element={<MenuIcons />} />
 
             <Route path="/booking" element = {<Booking />} />
             <Route path="/services/message-lotion-skin-jasmine" 

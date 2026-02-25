@@ -29,11 +29,11 @@ const Packages = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 mt-5">
+        <div className="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 mt-5 lg:h-auto xl:h-auto">
           {services.slice(6, 12).map((item) => (
             <div
               key={item._id}
-              className="w-full p-2 flex flex-col mx-auto mb-5"
+              className="w-full p-2 flex flex-col mx-auto mb-5 lg:h-auto xl:h-auto  justify-between"
             >
               <figure>
                 <img
@@ -44,7 +44,7 @@ const Packages = () => {
               </figure>
 
               <div className="w-full flex flex-col justify-center">
-                <p className="text-[30px] font-extrabold text-center mt-5 text-white">
+                <p className="text-[30px] lg:text-[35px] xl:text-[35px] font-extrabold text-center mt-5 text-white">
                   {item.title?.[lang] || item.title?.en}
                 </p>
 
@@ -55,7 +55,7 @@ const Packages = () => {
                 <div className="flex justify-center mt-5">
                   <Link
                     to={item.category?.path || "#"}
-                    className="cursor-pointer border border-gray-100 lg:rounded-4xl lg:w-40 lg:text-center xl:rounded-4xl xl:w-40 xl:text-center text-white p-3 hover:bg-white hover:text-black transition-all duration-300"
+                    className="cursor-pointer rounded-4xl w-35 text-center border border-gray-100 lg:rounded-4xl lg:w-40 lg:text-center xl:rounded-4xl xl:w-40 xl:text-center text-white p-2.5 hover:bg-white hover:text-black transition-all duration-300"
                   >
                     Read More
                   </Link>

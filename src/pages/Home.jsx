@@ -7,11 +7,13 @@ import Packages from '../components/Packages'
 import Procedures from '../components/Procedures'
 import Layout from '../layout/Layout'
 import BlogPost from './BlogPost'
+import MenuIcons from '../components/MenuIcons'
 export const Home = () => {
   return (
     <>
         <Layout>
             <ImageSlider />
+            <MenuIcons />
             <Welcome />
             <Packages />
             <Procedures />
