@@ -18,15 +18,11 @@ const Login = () => {
         email,
         password,
       });
-
-      console.log("API Response:", res.data);
-
       if (res.data.success) {
         const token = res.data.result.token;
 
         if (token) {
           sessionStorage.setItem("token", token);
-          console.log("Success token", token);
           navigate("/admin/dashboard");
         } else {
           console.error("Token not found in response result");

@@ -5,7 +5,6 @@ import useGetVideoFront from "../hooks/frotendHook/getVideoFront/useGetVideoFron
 import Loading from "../components/Loading";
 const Video = () => {
   const { video, loading } = useGetVideoFront();
-  console.log("Video frontend", video);
   return (
     <>
       <Layout>

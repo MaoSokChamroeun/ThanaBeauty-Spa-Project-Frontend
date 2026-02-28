@@ -1,10 +1,10 @@
-import icons1  from '../assets/icons/1.png'
-import icons2  from '../assets/icons/2.png'
-import icons3  from '../assets/icons/3.png'
-import icons4  from '../assets/icons/4.png'
-import icons5  from '../assets/icons/5.png'
-import icons6  from '../assets/icons/6.png'
-import icons7  from '../assets/icons/7.png'
+import icons1  from '../assets/icons/body-massage.jpg'
+import icons2  from '../assets/icons/foot.png'
+import icons3  from '../assets/icons/body-scrub.avif'
+import icons4  from '../assets/icons/4.jpg'
+import icons5  from '../assets/icons/use-foot-scrub-foot-hygiene-line-icon-vector-illustration-use-foot-scrub-foot.webp'
+import icons6  from '../assets/icons/body-massage.webp'
+import icons7  from '../assets/icons/4 hand.jpg'
 const icons = [
     {
         id : 1,

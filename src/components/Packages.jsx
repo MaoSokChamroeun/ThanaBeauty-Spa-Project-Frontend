@@ -39,7 +39,7 @@ const Packages = () => {
                 <img
                   src={item.image}
                   alt={item.title?.[lang] || item.title?.en}
-                  className="w-full h-[380px]  rounded-sm lg:rounded-none xl:rounded-none object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-[380px] rounded-sm lg:rounded-sm xl:rounded-sm object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </figure>
 

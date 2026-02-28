@@ -9,7 +9,7 @@ const useCreatePackage = () => {
     price: "",
     description: "",
   });
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
 
