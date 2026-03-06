@@ -93,7 +93,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div className="flex gap-3 text-3xl mx-auto md:mx-0 bg-gray-300 p-2 px-4 pe-4 rounded-2xl border-1">
-            <Link to="https://web.facebook.com/ninetyninex99">
+            <Link to="https://www.facebook.com/share/1HFg5QmdrU/?mibextid=wwXIfr">
               <FaFacebook className="text-[#1877F2]" />
             </Link>
 
@@ -101,7 +101,7 @@ const Footer = () => {
               <FaTiktok className="text-black" />
             </Link>
 
-            <Link to="https://t.me/Ninetyninex99">
+            <Link to="#">
               <FaTelegram className="text-[#229ED9]" />
             </Link>
 

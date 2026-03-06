@@ -6,13 +6,12 @@ import { toast } from "react-toastify";
 const useUpdatePackage = () => {
   const { id } = useParams(); // Get the ID from the URL
   const navigate = useNavigate();
-  
+
   const [formData, setFormData] = useState({
-    package_name: "",
-    price: "",
-    description : ""
+    title: { en: "", kh: "", ch: "" },
+    description: { en: "", kh: "", ch: "" },
   });
-  
+
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -21,21 +20,24 @@ const useUpdatePackage = () => {
   useEffect(() => {
     const fetchPackage = async () => {
       try {
-        setLoading(true)
-        const token = sessionStorage.getItem("token")
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/package/${id}`,{
-          headers : {
-            Authorization : `Bearer ${token}`
-          }
-        });
+        setLoading(true);
+        const token = sessionStorage.getItem("token");
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/package/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        );
         if (res.data.success) {
-          setLoading(false)
+          setLoading(false);
+          const packagePost = res.data.data;
           setFormData({
-            package_name: res.data.data.package_name,
-            price: res.data.data.price,
-            description : res.data.data.description
+            title: packagePost.title || { kh: "", en: "", ch: "" },
+            description: packagePost.description || { kh: "", en: "", ch: "" },
           });
-          setPreview(res.data.data.image);
+          setPreview(packagePost.image);
         }
       } catch (error) {
         console.error("Fetch error", error);
@@ -56,38 +58,48 @@ const useUpdatePackage = () => {
     }
   };
   // 2. The Update Submit function
-const handleUpdateSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
+  const handleUpdateSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-  const data = new FormData();
-  data.append("package_name", formData.package_name);
-  data.append("price", formData.price);
-  data.append("description" , formData.description);
-  
-  if (image) {
-    data.append("image", image);
-  }
-  try {
-    setLoading(true)
-    const token = sessionStorage.getItem("token")
-    const res = await axios.put(`${import.meta.env.VITE_API_URL}/api/package/${id}`, data, {
-      headers: {
-         "Content-Type": "multipart/form-data",
-         Authorization : `Bearer ${token}`
-        },
-    });
-    if (res.data.success) {
-      toast.success(res.data.message || "Package Updated successfully");
-      navigate("/admin/dashboard/package");
+    const data = new FormData();
+    data.append("title.en", formData.title.en);
+    data.append("title.kh", formData.title.kh);
+    data.append("title.ch", formData.title.ch);
+    data.append("description.en", formData.description.en);
+    data.append("description.kh", formData.description.kh);
+    data.append("description.ch", formData.description.ch);
+
+    if (image) {
+      data.append("image", image);
     }
-  } catch (error) {
-    console.error("Update error details:", error.response?.data || error.message);
-    toast.error(error.message || "Sorry Update fails :(");
-  } finally {
-    setLoading(false);
-  }
-};
+    try {
+      setLoading(true);
+      const token = sessionStorage.getItem("token");
+      const res = await axios.put(
+        `${import.meta.env.VITE_API_URL}/api/package/${id}`,
+        data,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+      if (res.data.success) {
+        toast.success(res.data.message || "Package Updated successfully");
+        navigate("/admin/dashboard/package");
+      }
+    } catch (error) {
+      console.error(
+        "Update error details:",
+        error.response?.data || error.message,
+      );
+      toast.error(error.message || "Sorry Update fails :(");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return {
     formData,

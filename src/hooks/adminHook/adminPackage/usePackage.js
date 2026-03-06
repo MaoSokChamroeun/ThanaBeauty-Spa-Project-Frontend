@@ -8,14 +8,14 @@ const usePackage = () => {
     const getAllPackage = async () => {
         setLoading(true);
         try {
-            const token = sessionStorage.getItem("token");
+        const token = sessionStorage.getItem("token");
         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/package`, {
             headers: {
                 Authorization: `Bearer ${token}` 
             }
         });
         if (res.data.success) {
-            setPackage(res.data.data || res.data.result);
+            setPackage(res.data.data);
         }
         } catch (error) {
             console.error('Fetching error:', error);

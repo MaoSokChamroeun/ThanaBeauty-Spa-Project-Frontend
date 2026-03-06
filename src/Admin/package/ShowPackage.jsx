@@ -9,6 +9,8 @@ import useDelete from "../../hooks/adminHook/adminPackage/useDelete";
 const ShowPackage = () => {
   const { packages, loading, getAllPackage } = usePackage();
   const { deletePackage, loading: isDeleting } = useDelete();
+
+  console.log('This a package' ,packages)
   return (
     <div className="flex bg-gray-50 min-h-screen">
       <Sidebar />
@@ -39,11 +41,11 @@ const ShowPackage = () => {
                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                       Image
                     </th>
-                    <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    {/* <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                       Package Name
-                    </th>
+                    </th> */}
                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                      Price
+                      Title
                     </th>
                     <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                       Description
@@ -80,14 +82,16 @@ const ShowPackage = () => {
                             className="w-12 h-12 object-cover rounded-md border border-gray-200"
                           />
                         </td>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">
+                        {/* <td className="px-6 py-4 text-sm font-medium text-gray-900">
                           {item.package_name}
-                        </td>
-                        <td className="px-6 py-4 text-sm font-bold text-red-600">
-                          ${item.price}
-                        </td>
+                        </td> */}
                         <td className="px-6 py-4 text-sm font-bold border-gray-200">
-                          {item.description}
+                          <div>{item.title.en}</div>
+                          <div>{item.title.kh}</div>
+                           <div>{item.title.ch}</div>
+                        </td>
+                        <td className="px-6 py-4 text-sm font-normal text-gray-600 border-gray-200">
+                          <p>{item.description?.en || "No description available"}</p>
                         </td>
                         <td className="px-6 py-4 text-center">
                           <div className="flex justify-center gap-3">

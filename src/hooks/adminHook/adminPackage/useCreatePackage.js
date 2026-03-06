@@ -5,9 +5,8 @@ import { toast } from "react-toastify";
 const useCreatePackage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    package_name: "",
-    price: "",
-    description: "",
+    title: { en: "", kh: "", ch: "" },
+    description: { en: "", kh: "", ch: "" },
   });
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState(null);
@@ -15,6 +14,15 @@ const useCreatePackage = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+   const handleLangChange = (e, lang, field) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: {
+        ...prev[field],
+        [lang]: e.target.value,
+      },
+    }));
   };
 
   const handleImageChange = (e) => {
@@ -28,19 +36,26 @@ const useCreatePackage = () => {
     setLoading(true);
 
     const data = new FormData();
-    data.append("package_name", formData.package_name);
-    data.append("price", formData.price);
-    data.append("description", formData.description);
+    data.append("title.en", formData.title.en);
+    data.append("title.kh", formData.title.kh);
+    data.append("title.ch", formData.title.ch);
+    data.append("description.en", formData.description.en);
+    data.append("description.kh", formData.description.kh);
+    data.append("description.ch", formData.description.ch);
     data.append("image", image);
     try {
       setLoading(true);
       const token = sessionStorage.getItem("token");
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/package`, data, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${token}`,
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/package`,
+        data,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
 
       if (res.data.success) {
         setLoading(false);
@@ -61,6 +76,8 @@ const useCreatePackage = () => {
     loading,
     preview,
     navigate,
+    handleLangChange,
+    formData
   };
 };
 

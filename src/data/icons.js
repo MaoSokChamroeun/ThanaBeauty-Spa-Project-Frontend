@@ -5,6 +5,7 @@ import icons4  from '../assets/icons/4.jpg'
 import icons5  from '../assets/icons/use-foot-scrub-foot-hygiene-line-icon-vector-illustration-use-foot-scrub-foot.webp'
 import icons6  from '../assets/icons/body-massage.webp'
 import icons7  from '../assets/icons/4 hand.jpg'
+import icons8  from '../assets/icons/oil-massage.jpg'
 const icons = [
     {
         id : 1,
@@ -40,6 +41,11 @@ const icons = [
         id : 7,
         img : icons7,
         path : '/services/4-hand-oil-message'
+    },
+    {
+        id : 8,
+        img : icons8,
+        path : '/services/oil-message'
     }
 ]
 

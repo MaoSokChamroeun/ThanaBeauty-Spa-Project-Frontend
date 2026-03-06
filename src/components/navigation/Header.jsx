@@ -28,7 +28,7 @@ const Header = () => {
     >
       <div className="h-8 flex md:flex px-4 justify-end items-center w-full bg-gray-100 text-black fixed z-10 p-6 top-0">
         <div className="container mx-auto flex items-center justify-end gap-6 text-[12px] font-medium">
-          <span className="lg:text-[15px] xl:text-[15px]">+855 070542973</span>
+          <span className="lg:text-[15px] xl:text-[15px]">088 238 89 85 / 098 330 880</span>
           <span className="uppercase tracking-wider md:text-[10px] lg:text-[15px] xl:text-[15px]">
             Phnom Penh, Cambodia
           </span>
@@ -213,7 +213,7 @@ const Header = () => {
       <div className="h-8 flex md:flex px-4 justify-end items-center w-full bg-gray-100 text-black fixed z-10 p-6 top-0">
         <div className="container mx-auto flex items-center justify-end gap-6 text-[12px] font-medium">
           <span className="text-[10px] md:text-[15px] lg:text-[15px] xl:text-[15px]">
-            +855 070542973
+            088 238 89 85 / 098 330 880
           </span>
           <span className="uppercase tracking-wider text-[10px] md:text-[15px] lg:text-[13px] xl:text-[13px] font-semibold">
             Phnom Penh, Cambodia
