@@ -46,6 +46,7 @@ import CreateVideo from "./Admin/adVideo/CreateVideo.jsx";
 import UpdateVideo from "./Admin/adVideo/UpdateVideo.jsx";
 import MenuIcons from "./components/MenuIcons.jsx";
 import PackagesSpa from "./components/spa-menu/PackagesSpa.jsx";
+import SteamSpa from "./components/spa-menu/SteamSpa.jsx";
 
 function App() {
   const {lang} = useLang();
@@ -109,6 +110,9 @@ function App() {
             />
             <Route path="/services/spa-package"
               element={<PackagesSpa categorySlug="spa-package" />}
+            />
+             <Route path="/services/steam"
+              element={<SteamSpa categorySlug="steam" />}
             />
             {/* slug post */}
             <Route path="/post/:slug"
