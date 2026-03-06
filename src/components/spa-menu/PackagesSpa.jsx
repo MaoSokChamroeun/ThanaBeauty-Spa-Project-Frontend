@@ -6,6 +6,7 @@ import useSpaPackage from "../../hooks/frotendHook/spa-package/useSpaPackages";
 import { useLang } from "../context/LanguageContext";
 import Loading from "../Loading";
 import Procedures from "../Procedures";
+import spa_cover from '../../assets/spa.jpg'
 
 const PackagesSpa = () => {
   const { spaPackage, loading } = useSpaPackage();
@@ -24,7 +25,7 @@ const PackagesSpa = () => {
         </div>
         <figure className="relative">
           <img
-            src="https://mohegansun.com/content/dam/mohegansun/Images/Spa/Carousel-Mandara_Spa_Couples-1440x620.jpg"
+            src={spa_cover}
             alt=""
             className="w-full fixed h-screen -z-10 top-0"
           />
