@@ -45,7 +45,7 @@ const SpaPackages = ({ categorySlug }) => {
                   key={item._id || item.id || index}
                   className="w-full mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 lg:h-[400px] h-auto md:h-auto sm:w-full lg:w-full xl:w-full lg:mt-10 xl:mt-10 gap-6 border border-gray-400 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow "
                 >
-                  <div className="md:col-span-1">
+                  <div className="md:col-span-1 ">
                     <img
                       src={item.image}
                       alt={item.title?.[lang]}

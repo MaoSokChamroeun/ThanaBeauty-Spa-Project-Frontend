@@ -22,7 +22,9 @@ const resources = {
         "coconut-oil-massage": "Coconut Oil Massage",
         "scalping-massage": "Scalping & Massage",
         "hot-scented-candles": "Hot Scented Candles",
-        "cupping-massage": "Cupping & Massage"
+        "cupping-massage": "Cupping & Massage",
+        "spa-package" : "Spa Package",
+        "steam" : "Steam"
       },
        "media_category" : {
         "video" : "Video",
@@ -84,6 +86,8 @@ const resources = {
             "scalping-massage": "ម៉ាស្សាក្បាល",
             "hot-scented-candles": "ម៉ាស្សាទៀនក្រអូប",
             "cupping-massage": "ម៉ាស្សាជប់ខ្យល់",
+            "spa-package" : "កញ្ចប់សេវាកម្មស្ប៉ា",
+            "steam" : "ស្ពង់"
       },
       "media_category" : {
   "video" : "វីដេអូ",
@@ -139,7 +143,9 @@ const resources = {
         "coconut-oil-massage": "椰子油按摩",
         "scalping-massage": "头部按摩",
         "hot-scented-candles": "香薰蜡烛按摩",
-        "cupping-massage": "拔罐与按摩"
+        "cupping-massage": "拔罐与按摩",
+        "spa-package" : "水疗套餐",
+        "steam" : "蒸汽"
       },
      
       "media_category" : {

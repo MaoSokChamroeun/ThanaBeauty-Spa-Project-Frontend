@@ -23,7 +23,7 @@ const useUpdatePackage = () => {
         setLoading(true);
         const token = sessionStorage.getItem("token");
         const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/package/${id}`,
+          `${import.meta.env.VITE_API_URL}/api/spa-packages/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -49,7 +49,15 @@ const useUpdatePackage = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+   const handleLangChange = (e, lang, field) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: {
+        ...prev[field],
+        [lang]: e.target.value,
+      },
+    }));
+  };
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -77,7 +85,7 @@ const useUpdatePackage = () => {
       setLoading(true);
       const token = sessionStorage.getItem("token");
       const res = await axios.put(
-        `${import.meta.env.VITE_API_URL}/api/package/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/spa-packages/${id}`,
         data,
         {
           headers: {
@@ -109,6 +117,7 @@ const useUpdatePackage = () => {
     loading,
     preview,
     navigate,
+    handleLangChange
   };
 };
 

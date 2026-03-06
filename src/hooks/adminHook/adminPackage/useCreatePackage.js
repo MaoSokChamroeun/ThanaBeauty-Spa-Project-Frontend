@@ -47,7 +47,7 @@ const useCreatePackage = () => {
       setLoading(true);
       const token = sessionStorage.getItem("token");
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/package`,
+        `${import.meta.env.VITE_API_URL}/api/spa-packages`,
         data,
         {
           headers: {

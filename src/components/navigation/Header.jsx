@@ -86,9 +86,9 @@ const Header = () => {
               </div>
 
               {isMenuOpen && (
-                <div className="absolute top-full left-0 pt-4 w-56">
+                <div className="absolute top-full -left-50 pt-5 lg:w-[800px] xl:w-[900px]">
                   <div
-                    className="bg-white text-gray-800 shadow-2xl py-2 border-t-2 border-[#aa9fc7]"
+                    className="bg-white grid lg:grid-cols-3 xl:grid-cols-3 text-gray-800 shadow-2xl py-2 border-t-2 border-green-700"
                    
                   >
                     {categoriesFront.map((item, i) => {
@@ -125,13 +125,6 @@ const Header = () => {
             {/* Desktop Media Dropdown */}
             <li
               className="relative cursor-pointer"
-              // onMouseEnter={() => setIsMenuMedia(true)}
-              // onMouseLeave={() => setIsMenuMedia(false)}
-              // onClick={() => {
-              //   if (window.innerWidth >= 768) {
-              //     setIsMenuMedia(!isMenuMedia);
-              //   }
-              // }}
               onClick={() => setIsMenuMedia(!isMenuMedia)}
             >
               <div className="flex items-center hover:text-white uppercase">

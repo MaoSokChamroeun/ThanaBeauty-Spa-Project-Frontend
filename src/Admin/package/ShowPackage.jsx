@@ -92,6 +92,8 @@ const ShowPackage = () => {
                         </td>
                         <td className="px-6 py-4 text-sm font-normal text-gray-600 border-gray-200">
                           <p>{item.description?.en || "No description available"}</p>
+                           <p>{item.description?.kh || "No description available"}</p>
+                            <p>{item.description?.ch || "No description available"}</p>
                         </td>
                         <td className="px-6 py-4 text-center">
                           <div className="flex justify-center gap-3">

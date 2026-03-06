@@ -45,6 +45,8 @@ import ShowVideo from "./Admin/adVideo/ShowVideo.jsx";
 import CreateVideo from "./Admin/adVideo/CreateVideo.jsx";
 import UpdateVideo from "./Admin/adVideo/UpdateVideo.jsx";
 import MenuIcons from "./components/MenuIcons.jsx";
+import PackagesSpa from "./components/spa-menu/PackagesSpa.jsx";
+
 function App() {
   const {lang} = useLang();
   const fontClass = lang === 'kh' ? 'font-kantumruy' : 'font-josefin';
@@ -104,6 +106,9 @@ function App() {
             />
             <Route path="/services/cupping-message"
               element={<SpaPackages categorySlug="cupping-message" />}
+            />
+            <Route path="/services/spa-package"
+              element={<PackagesSpa categorySlug="spa-package" />}
             />
             {/* slug post */}
             <Route path="/post/:slug"
