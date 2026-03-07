@@ -4,10 +4,13 @@ import HeroBar from "../HeroBar";
 import useBooking from "../../hooks/adminHook/booking/useBooking";
 import Loading from "../Loading";
 import useDeleteBooking from "../../hooks/adminHook/booking/useDeleteBooking";
+import { useLang } from "../../components/context/LanguageContext";
 
 const ShowBooking = () => {
   const { booking, loading, getAllBooking } = useBooking();
   const { deleteBooking, loading: isDeleting } = useDeleteBooking();
+  const {lang} = useLang()
+  console.log('Show Booking here ' , booking)
   return (
     <>
       <div className="flex gap-2">
@@ -74,7 +77,9 @@ const ShowBooking = () => {
                         </td>
 
                         <td className="px-6 py-4 text-sm text-gray-600">
-                          {item.package?.package_name || "No Package"}
+                          <div className="font-bold text-gray-900">{item.package?.title?.kh}</div>
+                          <div className="text-gray-500 italic text-xs">{item.package?.title?.en}</div>
+                          <div className="text-gray-500 italic text-xs">{item.package?.title?.ch}</div>
                         </td>
 
                          <td className="px-6 py-4 text-sm">

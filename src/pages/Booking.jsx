@@ -4,9 +4,11 @@ import banner from '../assets/booking.png'
 import useBookingFront from "../hooks/frotendHook/bookingFront/useBookingFront"; // Import your hook
 import useServiceFront from "../hooks/frotendHook/useServiceFront";
 import Map from "../components/Map";
+import { useLang } from "../components/context/LanguageContext";
 
 const Booking = () => {
   const { servicesFront } = useServiceFront();
+  const {lang} = useLang()
   const { handleChange, handleSumbitBooking, formData, packages } =
     useBookingFront();
 
@@ -62,7 +64,7 @@ const Booking = () => {
                 {servicesFront?.map((cat) => (
                   <option key={cat._id} value={cat._id}>
                     {/* Change cat.title to cat.title.en or cat.title.kh */}
-                    {cat.title?.en} — (${cat.price})
+                    {cat.title?.[lang]} — (${cat.price})
                   </option>
                 ))}
               </select>
@@ -81,8 +83,8 @@ const Booking = () => {
                 <option value="">-- Choose a Package --</option>
                 {packages &&
                   packages.map((pkg) => (
-                    <option key={pkg._id} value={pkg._id}>
-                      {pkg.package_name}
+                    <option key={pkg._id} value={pkg._id} className="text-black">
+                      {pkg.title?.[lang]}
                     </option>
                   ))}
               </select>

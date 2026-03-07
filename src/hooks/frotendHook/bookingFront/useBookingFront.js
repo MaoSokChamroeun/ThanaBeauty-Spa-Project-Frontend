@@ -17,7 +17,7 @@ const useBookingFront = () => {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/package/public`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/spa-packages/public`);
         if (res.data.success) {
           setPackages(res.data.data);
         }
