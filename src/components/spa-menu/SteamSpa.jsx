@@ -17,7 +17,7 @@ const SteamSpa = ({ categorySlug }) => {
   return (
     <Layout>
       <div className="mt-0">
-        <div className="absolute top-50 left-0 w-full xl:p-2 lg:p-2">
+        <div className="absolute top-50 left-0 w-full xl:p-2 lg:p-2 xl:top-40">
           <h1 className="text-white lg:text-[80px] text-[40px] xl:text-[80px] text-[30px] font-bold text-center w-full flex justify-center uppercase">
             Spa Treatments
           </h1>
@@ -33,7 +33,7 @@ const SteamSpa = ({ categorySlug }) => {
           />
         </figure>
 
-        <div className="mt-100 bg-white h-auto w-full xl:p-2 ">
+        <div className="xl:mt-100 lg:mt-100 mt-100 p-1 bg-white h-auto w-full xl:p-2 ">
             {loading && (
               <div className="max-w-7xl h-auto mx-auto">
                 <div className="xl:w-[500px] mx-auto flex justify-center items-center">
@@ -54,7 +54,7 @@ const SteamSpa = ({ categorySlug }) => {
                   <img src={st.image} alt="" className="w-full object-cover" />
 
                   <div className="absolute w-full h-[300px] flex flex-col justify-between top-50 left-0 mb-40 p-4 sm:w-full sm:p-2 sm:top-80 md:top-45 lg:w-[450px] lg:left-10 lg:top-60 xl:left-20 xl:top-70 xl:w-[500px] xl:h-[300px] xl:flex xl:justify-between xl:flex-col bg-[#386324] xl:px-8 xl:pt-4 xl:pb-4">
-                    <h1 className="text-[35px] md:text-[28px] text-white font-bold">
+                    <h1 className="text-[25px] xl:text-[35px] lg:text-[30px] md:text-[28px] text-white font-bold">
                       {st.title?.[lang]}
                     </h1>
 
@@ -65,7 +65,7 @@ const SteamSpa = ({ categorySlug }) => {
 
                     <p className="text-gray-300">{st.description?.[lang]}</p>
 
-                    <button className="p-3.5 mt-4 bg-white cursor-pointer">
+                    <button className="p-3.5 mt-4 bg-white cursor-pointer font-semibold">
                       <Link to={"/booking"}>{t("book_now")}</Link>
                     </button>
                   </div>

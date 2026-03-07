@@ -20,30 +20,34 @@ const SpaPackages = ({ categorySlug }) => {
   return (
     <Layout>
       <div className="w-full">
-        <figure className="w-full mt-25">
+        <figure className="w-full">
           <img
             src={activePage.image}
-            className="object-cover w-full h-[400px] lg:h-[600px] xl:h-[700px]"
+            className="object-cover w-full h-screen top-0 lg:h-[600px] xl:h-screen fixed -z-10 xl:top-0" 
             alt={activePage.title}
           />
-        </figure>
 
-        <div className="mt-10 max-w-7xl mx-auto">
-          <h1 className="text-center text-[35px] font-extrabold uppercase tracking-wide">
+          <div className="z-10 absolute top-50 left-0 w-full">
+            <h1 className="text-center text-[35px] xl:text-[60px] text-white font-extrabold uppercase tracking-wide">
             {activePage.title}
           </h1>
-          <p className="text-center mt-4 text-gray-600 max-w-2xl mx-auto">
+          <p className="text-center mt-4 text-gray-100 w-[320px] xl:w-full lg:w-full mx-auto xl:text-gray-200 xl:text-[18px] ">
       
             {t('experience_msg')} {activePage.title}. {t('rejuvenate_msg')}
           </p>
+          </div>
+        </figure>
 
-          <div className="max-w-7xl p-2 mx-auto  space-y-6 sm:mt-6 md:p-2 sm:p-2">
+        <div className="w-full mt-120 bg-white z-10">
+
+          <div className="mt-10 max-w-7xl mx-auto">
+          <div className="max-w-7xl p-2 mx-auto space-y-6 sm:mt-6 md:p-2 sm:p-2">
             {loading && <Loading />}
             {!loading && servicesCategory?.data && servicesCategory.data.length > 0 ? (
               servicesCategory.data.map((item, index) => (
                 <div
                   key={item._id || item.id || index}
-                  className="w-full mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 lg:h-[400px] h-auto md:h-auto sm:w-full lg:w-full xl:w-full lg:mt-10 xl:mt-10 gap-6 border border-gray-400 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow "
+                  className="w-full mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 lg:h-[400px] h-auto md:h-auto sm:w-full lg:w-full xl:w-full lg:mt-10 xl:mt-4 gap-6 border border-gray-400 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow "
                 >
                   <div className="md:col-span-1 ">
                     <img
@@ -110,6 +114,7 @@ const SpaPackages = ({ categorySlug }) => {
               </div>
             )}
           </div>
+        </div>
         </div>
         <Procedures />
       </div>

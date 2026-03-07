@@ -45,7 +45,7 @@ const PackagesSpa = () => {
                   <img src={pic.image} alt="" className="w-full object-cover h-auto" />
                 </figure>
                 <div className="p-2 w-auto h-auto text-center">
-                  <p className="text-2xl font-semibold">{pic.title?.[lang]}</p>
+                  <p className="text-2xl font-semibold text-[#386324]">{pic.title?.[lang]}</p>
                   <p className="text-[16px]">{pic.description?.[lang]}</p>
                 </div>
               </div>
