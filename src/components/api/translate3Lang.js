@@ -49,16 +49,22 @@ const resources = {
       "treatment_package" : "OTHER TREATMENTS/PACKAGES",
       "our_shop" : "Our Shop Spa",
       slug_post_desc : {
-        "moon-light-spa-massage-promotion" : "Experience the ultimate skin glow with our Jasmine Lotion Skin Treatment. Rich in antioxidants and natural oils, this session focuses on skin elasticity and brightness. The soothing aroma of Jasmine reduces anxiety, while the lotion absorbs quickly to repair dry skin, leaving it silky smooth and radiant.",
+      "moon-light-spa-massage-promotion" : "Experience the ultimate skin glow with our Jasmine Lotion Skin Treatment. Rich in antioxidants and natural oils, this session focuses on skin elasticity and brightness. The soothing aroma of Jasmine reduces anxiety, while the lotion absorbs quickly to repair dry skin, leaving it silky smooth and radiant.",
       "aroma-therapy-massage-benefits" : "Aromatherapy Massage is a holistic healing treatment that uses natural plant extracts to promote health and well-being. By combining the power of touch with the therapeutic properties of essential oils, this massage helps",
       "facial-treatment-glowing-skin" : "Unlock your skin's natural radiance with our premium Facial Treatment. Designed for all skin types, this session focuses on deep cleansing, exfoliation, and hydration. We use high-quality serums and specialized massage techniques to stimulate collagen production and remove impurities. The result is a refreshed, plump, and glowing complexion that lasts for days.",
-      "hot-stone-massage-detox" : "Experience the ultimate healing power of our Hot Stone Detox Massage. Smooth, heated volcanic stones are placed on key energy points of your body to melt away deep muscle tension and improve blood flow. Combined with professional massage strokes, the heat helps open your pores and release built-in toxins. This therapy is perfect for rebalancing your energy, reducing chronic pain, and deeply detoxifying your entire system."
+      "hot-stone-massage-detox" : "Experience the ultimate healing power of our Hot Stone Detox Massage. Smooth, heated volcanic stones are placed on key energy points of your body to melt away deep muscle tension and improve blood flow. Combined with professional massage strokes, the heat helps open your pores and release built-in toxins. This therapy is perfect for rebalancing your energy, reducing chronic pain, and deeply detoxifying your entire system.",
+      "foot-reflexology-health" : "Applying pressure to key points on the feet helps balance internal organs and relieves fatigue.",
+      "head-shoulder-back-massage-therapy" : "Using smooth, heated natural stones placed on key body points to melt away muscle tension and improve blood circulation." ,
+      "traditional-khmer-herbal-steam-detox":"Experience the healing power of authentic Khmer herbs in our traditional steam treatment. It helps detoxify your body, improve blood circulation, relieve stress, and leave your skin with a healthy, natural glow."
       },
       slug_post_title: {
       "moon-light-spa-massage-promotion-title" : "Message Lotion Skin Jasmine",
       "aroma-therapy-massage-benefits-title" : "Aromatherapy Massage Benefits",
       "facial-treatment-glowing-skin-title" : "Facial Treatment Glowing Skin",
-      "hot-stone-massage-detox-title" : "Hot Stone Massage Detox"
+      "hot-stone-massage-detox-title" : "Hot Stone Massage Detox",
+      "foot-reflexology-health-title" : "Foot Reflexology for Better Health",
+      "head-shoulder-back-massage-therapy-title" : "Relaxing Hot Stone Massage Therapy",
+      "traditional-khmer-herbal-steam-detox-title" : "Traditional Khmer Herbal Steam Detox"
       }
 
     },
@@ -114,12 +120,18 @@ const resources = {
       "aroma-therapy-massage-benefits" : "ការម៉ាស្សាបែប Aromatherapy គឺជាការព្យាបាលបែបធម្មជាតិដែលប្រើប្រាស់ប្រេងចម្រាញ់ពីរុក្ខជាតិ ដើម្បីលើកកម្ពស់សុខភាព និងតុល្យភាពរាងកាយ។ តាមរយៈការរួមបញ្ចូលគ្នារវាងបច្ចេកទេសម៉ាស្សា និងគុណសម្បត្តិនៃប្រេងក្រអូប វាជួយដល់ការកាត់បន្ថយស្ត្រេស និងធ្វើឱ្យអារម្មណ៍ស្រស់ថ្លាឡើងវិញ។",
       "facial-treatment-glowing-skin" : "ផ្ដល់ភាពភ្លឺថ្លាពីធម្មជាតិដល់ស្បែកមុខរបស់អ្នក ជាមួយសេវាកម្មព្យាបាលផ្ទៃមុខកម្រិតខ្ពស់របស់យើង។ បង្កើតឡើងសម្រាប់គ្រប់ប្រភេទស្បែក សេវាកម្មនេះផ្ដោតលើការលាងសម្អាតយ៉ាងជ្រៅ ការជម្រុះកោសិកាចាស់ៗ និងការផ្ដល់សំណើម។ យើងប្រើប្រាស់សេរ៉ូមគុណភាពខ្ពស់ និងបច្ចេកទេសម៉ាស្សាពិសេស ដើម្បីជម្រុញការផលិតកូឡាជែន និងជម្រះភាពកខ្វក់ ធ្វើឱ្យផ្ទៃមុខតឹងណែន និងភ្លឺរលោង។",
       "hot-stone-massage-detox" : "ទទួលយកបទពិសោធន៍នៃការព្យាបាលដ៏អស្ចារ្យជាមួយការម៉ាស្សាដោយថ្មក្ដៅបន្សាបជាតិពុល។ ថ្មភ្នំភ្លើងដែលរលោង និងមានកម្ដៅល្មម ត្រូវបានដាក់នៅលើចំណុចថាមពលសំខាន់ៗនៃរាងកាយ ដើម្បីរំលាយការតានតឹងសាច់ដុំ និងធ្វើឱ្យឈាមរត់បានល្អប្រសើរ។ កម្ដៅថ្មជួយបើករន្ធញើស និងបញ្ចេញជាតិពុលដែលកកកុញក្នុងខ្លួន ជួយឱ្យរាងកាយមានតុល្យភាព និងកាត់បន្ថយការឈឺចាប់រ៉ាំរ៉ៃ។",
+      "foot-reflexology-health" : "ការប្រើសម្ពាធលើចំណុចសំខាន់ៗនៃប្រអប់ជើង ជួយឱ្យសរីរាង្គក្នុងរាងកាយមានតុល្យភាព និងជួយកាត់បន្ថយភាពនឿយហត់",
+      "head-shoulder-back-massage-therapy" : "ការប្រើប្រាស់ថ្មក្តៅពីធម្មជាតិដាក់លើចំណុចសំខាន់ៗនៃរាងកាយ ដើម្បីជួយឱ្យសាច់ដុំដែលតឹងណែនប្រែជាធូរស្រាល និងបង្កើនចរន្តឈាម។",
+      "traditional-khmer-herbal-steam-detox" : "ទទួលយកបទពិសោធន៍នៃការស្ពង់បែបបុរាណ ដោយប្រើប្រាស់គ្រឿងផ្សំឱសថធម្មជាតិពិតៗ ដើម្បីជួយបន្សុតជាតិពុលពីរាងកាយ សម្រួលចរន្តឈាម បំបាត់ភាពតានតឹង និងធ្វើឱ្យស្បែកមានសុខភាពល្អភ្លឺថ្លាចេញពីខាងក្នុង។"
       },
       slug_post_title : {
       "moon-light-spa-massage-promotion-title" : "សេវាកម្មម៉ាស្សាឡូសិនផ្កាម្លិះ",
       "aroma-therapy-massage-benefits-title" : "អត្ថប្រយោជន៍នៃការម៉ាស្សាបែបក្លិនក្រអូប",
       "facial-treatment-glowing-skin-title" : "សេវាកម្មថែរក្សាផ្ទៃមុខឱ្យភ្លឺរលោង",
-      "hot-stone-massage-detox-title" : "សេវាកម្មម៉ាស្សាដោយថ្មក្ដៅបន្សាបជាតិពុល"
+      "hot-stone-massage-detox-title" : "សេវាកម្មម៉ាស្សាដោយថ្មក្ដៅបន្សាបជាតិពុល",
+      "foot-reflexology-health-title" : "ការម៉ាស្សាប្រអប់ជើង ដើម្បីសុខភាពកាន់តែប្រសើរ",
+      "head-shoulder-back-massage-therapy-title" : "ការម៉ាស្សាដោយប្រើថ្មក្តៅ ដើម្បីបន្ធូរសាច់ដុំ",
+      "traditional-khmer-herbal-steam-detox-title" : "ស្ពង់ឱសថបុរាណខ្មែរ ដើម្បីបន្សុតជាតិពុល និងថែរក្សាសុខភាព"
       }
     }
   },
@@ -174,12 +186,18 @@ const resources = {
       "aroma-therapy-massage-benefits" : "香薰按摩是一种利用天然植物萃取精华来促进健康和身心愉悦的全方位疗法。通过触碰的力量与精油的治疗特性相结合，这种按摩有助于缓解压力、放松神经系统，并让您的身心重新达到平衡状态。",
       "facial-treatment-glowing-skin" : "为您的面部肌肤带来自然的光泽，体验我们高端的面部护理服务。此服务适合所有肤质，专注于深层清洁、去角质和补水。我们使用高品质的精华和专业的按摩技巧，刺激胶原蛋白的生成，去除杂质。最终效果是焕发活力、饱满光滑的肌肤，持久数天。",
       "hot-stone-massage-detox" : "体验我们热石排毒按摩的终极疗愈力量。光滑、加热的火山石被放置在您身体的关键能量点上，以融化深层肌肉紧张并改善血液循环。结合专业的按摩手法，热量有助于打开毛孔并释放体内的毒素。这种疗法非常适合重新平衡您的能量，减轻慢性疼痛，并深层排毒。",
+      "foot-reflexology-health" : "通过按压足部的关键穴位，有助于平衡内脏功能并缓解疲劳",
+      "head-shoulder-back-massage-therapy" : "将光滑的热天然石头放置在身体关键部位，帮助缓解肌肉紧张并促进血液循环。",
+      "traditional-khmer-herbal-steam-detox" : "体验正宗高棉草药蒸汽疗法。该疗法通过天然草药成分帮助身体排毒、促进血液循环、缓解压力，并由内而外焕发肌肤健康光泽。"
       },
       slug_post_title : {
       "moon-light-spa-massage-promotion-title" : "茉莉亮肤乳液按摩",
       "aroma-therapy-massage-benefits-title" : "香薰按摩疗法及其益处",
       "facial-treatment-glowing-skin-title" : "面部焕采亮肤护理",
-      "hot-stone-massage-detox-title" : "热石排毒按摩护理"
+      "hot-stone-massage-detox-title" : "热石排毒按摩护理",
+       "foot-reflexology-health-title" : "足底按摩：助您拥抱更健康的身体",
+       "head-shoulder-back-massage-therapy-title" : "热石疗法：深层放松肌肉",
+       "traditional-khmer-herbal-steam-detox-title" : "高棉传统草药蒸汽：排毒与养生疗法"
       }
     }
   }

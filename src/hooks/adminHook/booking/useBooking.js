@@ -16,6 +16,7 @@ const useBooking = () => {
             });
             if (res.data.success) {
                 setBooking(res.data.data);
+                console.log('Show api' , res.data.data)
             }
         } catch (error) {
             console.error('Fetching Error:', error);

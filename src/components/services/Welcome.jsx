@@ -30,13 +30,13 @@ const Welcome = () => {
             <div className="w-full grid grid-cols-1 mt-10 lg:grid-cols-2 xl:grid-cols-2 gap-6 p-2"  key={items._id || index}>
               <div className="sm:w-full lg:w-full xl:w-full">
                 <figure
-                  className="h-[350px] lg:h-[500px] w-full rounded-md"
+                  className="h-[350px] lg:h-[500px] w-full rounded-md xl:h-[450px]"
                   key={items._id || index}
                 >
                   <img
                     src={items.image}
                     alt={items.title || "post image"}
-                    className="w-full h-full object-cover rounded-md"
+                    className="w-full h-full object-cover"
                   />
                 </figure>
               </div>
@@ -53,7 +53,7 @@ const Welcome = () => {
                   </p>
                 </div>
                 <div>
-                  <button className="mt-10 bg-[#386324] hover:bg-black transition-colors w-40 h-12 text-white rounded-md">
+                  <button className="mt-10 bg-[#386324] hover:bg-black transition-colors w-40 h-12 text-white rounded-sm">
                     <Link to={`/post/${items.slug}`}>Read More</Link>
                   </button>
                 </div>

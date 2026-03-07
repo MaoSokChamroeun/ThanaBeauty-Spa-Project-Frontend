@@ -4,12 +4,12 @@ import { useLang } from "../components/context/LanguageContext";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../components/api/translate3Lang";
-import Loading from "../Admin/Loading";
+import Loading from "../components/Loading";
+
 
 const BlogPost = () => {
   const { postFront , loading } = usePostFront();
   const { lang } = useLang();
-  console.log('BLog post show here : ' , postFront)
   const { t } = useTranslation();
   useEffect(() => {
     const savedLng = localStorage.getItem("lng");
@@ -42,7 +42,7 @@ const BlogPost = () => {
                   <p className="text-[16px] xl:text-[16px]">{pic.content?.[lang]}</p>
 
                   <div>
-                     <button className="mt-2 bg-[#386324] hover:bg-black transition-colors w-30 h-10 text-white rounded-md">
+                     <button className="mt-2 bg-[#386324] hover:bg-black transition-colors w-30 h-10 text-white rounded-sm">
                     <Link
                       to={`/post/${pic.slug}`}
                       className="text-gray-900 hover:text-white text-white "

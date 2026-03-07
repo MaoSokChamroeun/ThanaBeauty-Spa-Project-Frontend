@@ -6,6 +6,13 @@ import icons5  from '../assets/icons/use-foot-scrub-foot-hygiene-line-icon-vecto
 import icons6  from '../assets/icons/body-massage.webp'
 import icons7  from '../assets/icons/4 hand.jpg'
 import icons8  from '../assets/icons/oil-massage.jpg'
+import icons9 from '../assets/icons/9.png'
+import icons10 from '../assets/icons/10.avif'
+import icons11 from '../assets/icons/11.png'
+import icons12 from '../assets/icons/12.png'
+import icons13 from '../assets/icons/13.png'
+import icons14 from '../assets/icons/14.png'
+import icons15 from '../assets/icons/15.png'
 const icons = [
     {
         id : 1,
@@ -46,6 +53,41 @@ const icons = [
         id : 8,
         img : icons8,
         path : '/services/oil-message'
+    },
+    {
+        id: 9,
+        img : icons9,
+        path : '/services/compress-message'
+    },
+    {
+        id : 10,
+        img : icons10,
+        path : '/services/coconut-oil-message',
+    },
+    {
+        id : 11,
+        img : icons11,
+        path : '/services/scalping-message'
+    },
+    {
+        id : 12,
+        img : icons12,
+        path : '/services/hot-scented-candles'
+    },
+    {
+        id : 13,
+        img : icons13,
+        path : '/services/cupping-message'
+    },
+    {
+        id : 14,
+        img : icons14,
+        path : '/services/spa-package'
+    },
+    {
+        id : 15,
+        img : icons15,
+        path : '/services/steam'
     }
 ]
 

@@ -113,7 +113,7 @@ const Procedures = () => {
           {data.map((item) => (
             <div
               key={item._id}
-              className="w-[400px] sm:w-[400px] md:w-[390px] lg:w-[450px] xl:w-[450px] bg-white shadow-md lg:rounded-sm xl:rounded-md overflow-hidden flex-shrink-0 transition-transform duration-300"
+              className="w-[400px] sm:w-[400px] md:w-[390px] lg:w-[450px] xl:w-[410px] bg-white overflow-hidden flex-shrink-0 transition-transform duration-300"
             >
               <img
                 src={item.image}

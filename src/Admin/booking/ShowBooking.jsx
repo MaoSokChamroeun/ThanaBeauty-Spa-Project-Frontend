@@ -4,12 +4,10 @@ import HeroBar from "../HeroBar";
 import useBooking from "../../hooks/adminHook/booking/useBooking";
 import Loading from "../Loading";
 import useDeleteBooking from "../../hooks/adminHook/booking/useDeleteBooking";
-import { useLang } from "../../components/context/LanguageContext";
 
 const ShowBooking = () => {
   const { booking, loading, getAllBooking } = useBooking();
   const { deleteBooking, loading: isDeleting } = useDeleteBooking();
-  const {lang} = useLang()
   console.log('Show Booking here ' , booking)
   return (
     <>
