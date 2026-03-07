@@ -19,10 +19,10 @@ const Welcome = () => {
       <div className="w-full">
         <div className="container mx-auto">
           <div className="text-center p-2">
-            <p className="text-center font-extrabold lg:text-[40px] xl:-text-[40px] text-[35px] mt-15 text-gray-800 uppercase">
+            <p className="text-center font-extrabold lg:text-[40px] xl:-text-[40px] text-[35px] mt-5 text-gray-800 uppercase xl:max-w-7xl mx-auto">
               {t("welcome_title")}
             </p>
-            <p className="text-center lg:text-[20px] xl:text-[20px] text-[16px]  text-gray-800">
+            <p className="text-center lg:text-[20px] xl:text-[20px] text-[16px] text-gray-800 xl:max-w-6xl mx-auto">
               {t("welcome_desc")}
             </p>
           </div>
