@@ -45,7 +45,7 @@ const PostSlug = () => {
               className={`w-full p-2 grid grid-cols-1 lg:flex ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 mb-20 items-center`}
             >
               <div className="w-full lg:w-1/2">
-                <figure className="overflow-hidden rounded-md shadow-lg">
+                <figure className="overflow-hidden shadow-lg">
                   <img
                     className="w-full h-[350px] lg:h-[500px] xl:h-[500px] object-cover hover:scale-105 transition-transform duration-300"
                     src={post.image}

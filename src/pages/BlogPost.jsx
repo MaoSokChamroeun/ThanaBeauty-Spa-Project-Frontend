@@ -4,10 +4,12 @@ import { useLang } from "../components/context/LanguageContext";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../components/api/translate3Lang";
+import Loading from "../Admin/Loading";
 
 const BlogPost = () => {
-  const { postFront } = usePostFront();
+  const { postFront , loading } = usePostFront();
   const { lang } = useLang();
+  console.log('BLog post show here : ' , postFront)
   const { t } = useTranslation();
   useEffect(() => {
     const savedLng = localStorage.getItem("lng");
@@ -17,55 +19,42 @@ const BlogPost = () => {
   }, []);
   return (
     <>
-      <div className="p-2 bg-[#386324] lg:mt-10 xl:mt-10">
+      <div className="p-2 bg-[#386324] lg:mt-10 xl:mt-5">
         <p className="text-[35px] font-bold text-center p-10 text-gray-100 uppercase">
           {t("our_shop")}
         </p>
-        <div className="max-w-7xl mx-auto lg:pt-10 xl:pt-10">
-          {postFront.slice(0, 4).map((post, index) => (
-            <div
-              key={post._id || index}
-              className={`w-full grid grid-cols-1  lg:flex ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 sm:mb-10 md:mb-10 lg:mb-10 xl:mb-10 mb-5 items-center`}
-            >
-              <div className="w-full lg:w-1/2 md:flex md:justify-center">
-                <figure className="overflow-hidden rounded-md shadow-lg">
-                  <img
-                    className="w-full h-[350px] sm:h-[450px] md:h-[600px] md:w-[800px] lg:h-[500px] lg:w-full xl:h-[500px] xl:w-full object-cover hover:scale-105 transition-transform duration-300"
-                    src={post.image}
-                    alt={post.title?.[lang]}
-                  />
-                </figure>
+       <div className=" bg-white w-full​​ lg:p-4 xl:p-4 p-2">
+          {loading && (
+              <div className="max-w-7xl h-auto mx-auto">
+                <div className="xl:w-[500px] mx-auto flex justify-center items-center">
+                  <Loading />
+                </div>
               </div>
+            )}
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-3 xl:grid-cols-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:gap-8 sm:gap-4 md:gap-2 lg:gap-4">
+            {postFront.map((pic, index) => (
+              <div className="lg:w-[320px] xl:w-[320px] sm:w-[320px] md:w-[250px] w-full mx-auto h-auto overflow-hidden xl:flex xl:flex-col xl:justify-between lg:flex lg:flex-col lg:justify-between md:flex md:flex-col md:justify-between sm:flex sm:flex-col sm:justify-between" key={index._id}>
+                <figure className="lg:w-full xl:w-full mx-auto xl:h-[210px] lg:h-[210px] sm:h-[200px] sm:w-full">
+                  <img src={pic.image} alt="" className="w-full h-full object-cover sm:h-full md:h-full lg:h-full xl:h-full" />
+                </figure>
+                <div className="p-2 w-auto h-auto text-center">
+                  <p className="text-2xl xl:text-[25px] font-semibold text-[#386324]">{pic.title?.[lang]}</p>
+                  <p className="text-[16px] xl:text-[16px]">{pic.content?.[lang]}</p>
 
-              {/* Text Section */}
-              <div className="w-full lg:w-1/2 p-5 md:justify-center md:flex md:w-full">
-                <div className="w-full md:px-6">
-                  <p className="lg:text-[35px] md:text-[45px] xl:text-[50px text-[30px] font-bold text-[white] leading-tight">
-                    {post.title?.[lang]}
-                  </p>
-                  <p className="text-[18px] mt-4 text-gray-100 line-clamp-3">
-                    {post.content?.[lang]}
-                  </p>
-
-                  <div className="mt-5">
-                    <p className="font-semibold text-gray-300">Tags</p>
-                    <span className="inline-block mt-1 px-3 py-5 rounded-full text-md text-white">
-                      {post.tags}
-                    </span>
-                  </div>
-
-                  <button className="mt-10 bg-[white] hover:bg-black transition-colors w-40 h-12 text-white rounded-md">
+                  <div>
+                     <button className="mt-2 bg-[#386324] hover:bg-black transition-colors w-30 h-10 text-white rounded-md">
                     <Link
-                      to={`/post/${post.slug}`}
-                      className="text-gray-900 hover:text-white "
+                      to={`/post/${pic.slug}`}
+                      className="text-gray-900 hover:text-white text-white "
                     >
                       Read More
                     </Link>
                   </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </>
