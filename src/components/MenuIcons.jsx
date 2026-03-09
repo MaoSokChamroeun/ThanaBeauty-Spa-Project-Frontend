@@ -6,7 +6,7 @@ const MenuIcons = () => {
     <>
       <div className="w-full bg-gray-100">
         <div className="max-w-7xl mx-auto lg:h-[auto] h-auto flex items-center justify-center">
-          <div className="w-full grid lg:grid-cols-6 xl:grid-cols-9 sm:grid-cols-5 md:grid-cols-6 grid-cols-4 gap-2 p-4 justify-center">
+          <div className="w-full grid lg:grid-cols-6 xl:grid-cols-9 sm:grid-cols-5 md:grid-cols-6 grid-cols-4 gap-2 p-4 justify-center" data-aos="fade-up">
             {icons.map((item, index) => (
               <Link
                 to={item.path}

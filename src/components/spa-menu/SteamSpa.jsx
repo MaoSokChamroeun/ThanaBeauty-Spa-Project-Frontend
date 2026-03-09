@@ -13,15 +13,14 @@ const SteamSpa = ({ categorySlug }) => {
   const { t } = useTranslation();
   const { servicesCategory = [], loading } =
     useGetServiceCategory(categorySlug);
-  console.log("Show here", servicesCategory);
   return (
     <Layout>
       <div className="mt-0">
         <div className="absolute top-50 left-0 w-full xl:p-2 lg:p-2 xl:top-40">
-          <h1 className="text-white lg:text-[80px] text-[40px] xl:text-[80px] text-[30px] font-bold text-center w-full flex justify-center uppercase">
+          <h1 className="text-white lg:text-[80px] text-[40px] xl:text-[80px] text-[30px] font-bold text-center w-full flex justify-center uppercase" data-aos="fade-up" data-aos-delay="200">
             Spa Treatments
           </h1>
-          <p className="text-white w-[300px] lg:w-full mx-auto text-center">
+          <p className="text-white w-[300px] lg:w-full mx-auto text-center" data-aos="fade-up" data-aos-delay="400">
             A Perfurnmed Spa Experice for Mind And Body Renaisance
           </p>
         </div>
@@ -33,7 +32,7 @@ const SteamSpa = ({ categorySlug }) => {
           />
         </figure>
 
-        <div className="xl:mt-100 lg:mt-100 mt-100 p-1 bg-white h-auto w-full xl:p-2 ">
+        <div className="xl:mt-100 lg:mt-100 mt-100 p-1 bg-white h-auto w-full xl:p-2" data-aos="fade-right" data-aos-delay="300">
             {loading && (
               <div className="max-w-7xl h-auto mx-auto">
                 <div className="xl:w-[500px] mx-auto flex justify-center items-center">
@@ -41,7 +40,7 @@ const SteamSpa = ({ categorySlug }) => {
                 </div>
               </div>
             )}
-          <div className="max-w-7xl mx-auto grid xl:grid-cols-2 grid-cols-1 h-auto md:grid-cols-2 md:p-1 md:gap-2 lg:grid-cols-2 lg:gap-2">
+          <div className="max-w-7xl mx-auto grid xl:grid-cols-2 grid-cols-1 h-auto md:grid-cols-2 md:p-1 md:gap-2 lg:grid-cols-2 lg:gap-2" >
             
             {!loading &&
             servicesCategory?.data &&

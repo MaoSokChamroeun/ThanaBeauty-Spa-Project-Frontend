@@ -80,7 +80,7 @@ const Procedures = () => {
         {t("treatment_package")}
       </h2>
 
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative max-w-7xl mx-auto" data-aos="fade-right" data-aos-delay="300">
         {/* Navigation Arrows */}
         <button
           onClick={prev}

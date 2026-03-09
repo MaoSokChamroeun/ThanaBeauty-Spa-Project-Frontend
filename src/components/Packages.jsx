@@ -28,7 +28,6 @@ const Packages = () => {
             {t('package_desc')}
           </p>
         </div>
-
         <div className="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 mt-5 lg:h-auto xl:h-auto">
           {services.slice(6, 12).map((item) => (
             <div

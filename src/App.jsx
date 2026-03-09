@@ -47,8 +47,16 @@ import UpdateVideo from "./Admin/adVideo/UpdateVideo.jsx";
 import MenuIcons from "./components/MenuIcons.jsx";
 import PackagesSpa from "./components/spa-menu/PackagesSpa.jsx";
 import SteamSpa from "./components/spa-menu/SteamSpa.jsx";
-
+import { useEffect } from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Global animation duration in ms
+      once: true,     // Whether animation should happen only once - while scrolling down
+    });
+  }, []);
   const {lang} = useLang();
   const fontClass = lang === 'kh' ? 'font-kantumruy' : 'font-josefin';
   return (

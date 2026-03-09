@@ -15,10 +15,10 @@ const PackagesSpa = () => {
     <Layout>
       <div className="mt-0">
         <div className="absolute top-50 left-0 w-full">
-          <h1 className="text-white lg:text-[50px] xl:text-[50px] text-[30px] font-bold text-center w-full flex justify-center">
+          <h1 className="text-white lg:text-[50px] xl:text-[50px] text-[30px] font-bold text-center w-full flex justify-center uppercase" data-aos="fade-up" data-aos-delay="200">
             Luxury Spa Treatment Packages & Bundles
           </h1>
-          <p className="text-white w-[300px] mx-auto text-center">
+          <p className="text-white w-[300px] mx-auto text-center" data-aos="fade-up" data-aos-delay="400">
             REFINED, RENEWED, RADIANT
           </p>
         </div>
@@ -37,7 +37,7 @@ const PackagesSpa = () => {
                 </div>
               </div>
             )}
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-3 xl:grid-cols-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:gap-8 sm:gap-4 md:gap-2 lg:gap-4">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-3 xl:grid-cols-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:gap-8 sm:gap-4 md:gap-2 lg:gap-4" data-aos="fade-right" data-aos-delay="300">
             
             {spaPackage.map((pic, index) => (
               <div className="lg:w-[320px] xl:w-[320px] sm:w-[320px] md:w-[250px] w-full mx-auto h-auto overflow-hidden" key={index._id}>

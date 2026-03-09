@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "aos": "^2.3.4",
     "axios": "^1.13.2",
     "boostrap": "^2.0.0",
     "bootstrap": "^5.3.8",

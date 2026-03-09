@@ -32,6 +32,7 @@ const Welcome = () => {
                 <figure
                   className="h-[350px] lg:h-[500px] w-full rounded-md xl:h-[450px]"
                   key={items._id || index}
+                  
                 >
                   <img
                     src={items.image}
@@ -41,7 +42,7 @@ const Welcome = () => {
                 </figure>
               </div>
 
-              <div className="flex flex-col justify-between">
+              <div className="flex flex-col justify-between" data-aos="fade-left" data-aos-delay="300">
                 <div className="w-full">
                   <p className="lg:text-[40px] xl:text-[40px] text-[25px] font-extrabold text-gray-800">
                     {items.title?.[lang]}
