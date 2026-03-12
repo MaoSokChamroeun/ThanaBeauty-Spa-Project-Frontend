@@ -5,7 +5,17 @@ import { FaTelegram } from "react-icons/fa6";
 import { FaTiktok } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
 import logo from "../assets/logo_1.jpg";
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
+import i18n from "./api/translate3Lang";
 const Footer = () => {
+    const {t} = useTranslation();
+  useEffect(() => {
+    const savedLng = localStorage.getItem("lng");
+    if (savedLng && i18n.language !== savedLng) {
+      i18n.changeLanguage(savedLng);
+    }
+  }, []);
   return (
     <footer className="w-full p-10 bg-[#386324] text-white">
       <div className="max-w-7xl mx-auto">
@@ -19,7 +29,7 @@ const Footer = () => {
               <span>Spa</span>
             </div>
             <p className="mt-2">
-              ទីតាំង នៅក្រោយផ្សាររំចែក អូឌឹម03 ផ្លូវជាតិលេខ4
+              {t("footer_title")}
             </p>
 
             {/* Email */}
@@ -36,7 +46,7 @@ const Footer = () => {
             {/* Phone */}
             <div className="flex items-center gap-3 mt-2">
               <span>📞</span>
-              <p className="font-bold">088 238 89 85 / 098 330 880</p>
+              <p className="font-bold">069 896 688 / 061 896 688</p>
             </div>
           </div>
 
@@ -84,7 +94,7 @@ const Footer = () => {
             <h2 className="footer-color">Contact</h2>
 
             <div className="mt-3 space-y-2">
-              <p className="font-semibold">088 238 89 85 / 098 330 880</p>
+              <p className="font-semibold">069 896 688 / 061 896 688</p>
               <p className="font-semibold">thanabeautyspa@gmail.com</p>
             </div>
           </div>
